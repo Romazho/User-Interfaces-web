@@ -1,5 +1,4 @@
-﻿
-<!doctype html>
+﻿<!doctype html>
 
 <html>
 
@@ -8,35 +7,46 @@
     <meta HTTP-EQUIV="Expires" CONTENT="-1">
     <meta HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=utf-8">
     <style TYPE="text/css">
+            /*modification des attributs de la balise table*/
+        table{
+            border-top: 3px solid black;
+            border-bottom: 3px solid black;
+            border-collapse: collapse;
+            margin:7px;
+        }
+        /* modification des attributs de la balise th */
+        th{
+            background-color:cornsilk;
+            margin:0px;
+            padding : 0px;
+            border-bottom: 1px solid black;
+        }
+        /* création d'une classe personalisée pour les tableaux à deux rangés d'entête */
+        .trCustom{
+            background-color:cornsilk;
+            margin:5px;
+            padding : 5px;
+            font-weight: bold;
+            text-align:center;
+            border-bottom: 1px solid black;
+        }
 
 
-      /*modification des attributs de la balise table*/
-    table{
-        border-top: 3px solid black;
-        border-bottom: 3px solid black;
-        border-collapse: collapse;
-        margin:7px;
-    }
-    /* modification des attributs de la balise th */
-    th{
-        background-color:cornsilk;
-        margin:0px;
-        padding : 0px;
-        border-bottom: 1px solid black;
-    }
-     /* création d'une classe personalisée pour les tableaux à deux rangés d'entête */
-    .trCustom{
-        background-color:cornsilk;
-        margin:5px;
-        padding : 5px;
-        font-weight: bold;
-        text-align:center;
-        border-bottom: 1px solid black;
-
-    }
 
     </style>
 
+    <script>
+
+        function modificationTableau(){
+            // if(document.getElementById("button1").innerHTML == "Effacer tableau 4"){
+                document.getElementById("button1").innerHTML = "Ajouter tableau 4";
+               // }
+            //else{
+                //document.getElementById("button1").innerHTML = "Effacer tableau 4";
+                //}
+        }
+
+    </script>
 
     <title>TD1, données initiales</title>
 
@@ -44,7 +54,9 @@
 
 <body>
 
-    <h1>TD1, étape 1</h1>
+    <button id="button1" onclick="modificationTableau">Effacer tableau 4</button>
+
+    <h1>TD1, étape 2</h1>
 
     <table id="param">
         <tr border-spacing="0px">
@@ -65,13 +77,13 @@
     </table>
 
     <table id="constituents">
-        <div   >
-        <tr >
+        <div>
+            <tr>
 
-            <th > STREAM CONSTITUENTS</th>
-            <th > AMOUNT/mol </th>
+                <th> STREAM CONSTITUENTS</th>
+                <th> AMOUNT/mol </th>
 
-        </tr>
+            </tr>
         </div>
         <tr>
             <td>Mg</td>
@@ -352,14 +364,14 @@
     </table>
 
     <table id="part1">
-        <tr class = "trCustom">
+        <tr class="trCustom">
             <td>Cp</td>
             <td>H</td>
             <td>S</td>
             <td>G</td>
             <td>V</td>
         </tr>
-        <tr class = "trCustom">
+        <tr class="trCustom">
             <td>J.K-1</td>
             <td>J</td>
             <td>J.K-1</td>
@@ -376,15 +388,15 @@
     </table>
 
     <table id="part2">
-        <tr class = "trCustom">
-	    <td></td>
+        <tr class="trCustom">
+            <td></td>
             <td>Cp</td>
             <td>H</td>
             <td>S</td>
             <td>G</td>
         </tr>
-        <tr class = "trCustom">
-	    <td></td>
+        <tr class="trCustom">
+            <td></td>
             <td>J.K-1</td>
             <td>J</td>
             <td>J.K-1</td>
@@ -427,9 +439,9 @@
         </tr>
     </table>
 
-    Cut-off limit for gaseous fractions/phase activities = 1.00E-70 Databases: FactPS 7.2 Data Search options: exclude gas ions; organic CxHy.. X(max) = 2; min soln cpts = 2
+    Cut-off limit for gaseous fractions/phase activities = 1.00E-70 Databases: FactPS 7.2 Data Search options: exclude
+    gas ions; organic CxHy.. X(max) = 2; min soln cpts = 2
 
 </body>
 
 </html>
-
