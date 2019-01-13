@@ -38,12 +38,15 @@
     <script>
 
         function modificationTableau(){
-             if(document.getElementById("button1").value == "Ajouter tableau 4"){
-                document.getElementById("button1").value = "Effacer tableau 4";
-                }
-            else{
-                document.getElementById("button1").value= "Ajouter tableau 4";
-                }
+            var bouton = document.getElementById("button1");
+            if(bouton.innerHTML == "Effacer tableau 4"){
+                bouton.innerHTML = "Ajouter tableau 4";
+                document.getElementById("output2").style.display = "none";
+            }
+            else if(bouton.innerHTML == "Ajouter tableau 4"){
+                bouton.innerHTML = "Effacer tableau 4";
+                document.getElementById("output2").style.display = "inline";
+            }
         }
 
     </script>
@@ -54,7 +57,7 @@
 
 <body>
 
-    <button id="button1" onclick="modificationTableau">Effacer tableau 4</button>
+    <button id="button1" onclick= "modificationTableau()">Effacer tableau 4</button>
 
     <h1>TD1, étape 2</h1>
 
