@@ -15,19 +15,17 @@
             margin:7px;
         }
         /* modification des attributs de la balise th */
-        th{
-            background-color:cornsilk;
-            margin:0px;
-            padding : 0px;
+        th {
+            background-color: #f7eecf;
+            margin: 0px;
+            padding: 0px;
             border-bottom: 1px solid black;
         }
         /* création d'une classe personalisée pour les tableaux à deux rangés d'entête */
-        .trCustom{
-            background-color:cornsilk;
-            margin:5px;
-            padding : 5px;
+        .trCustom {
+            background-color: #f7eecf;
             font-weight: bold;
-            text-align:center;
+            text-align: center;
             border-bottom: 1px solid black;
         }
 
@@ -36,16 +34,17 @@
     </style>
 
     <script>
+        
+        function modificationTableau() {
+            var x = document.getElementById("output2");
 
-        function modificationTableau(){
-            var bouton = document.getElementById("button1");
-            if(bouton.innerHTML == "Effacer tableau 4"){
-                bouton.innerHTML = "Ajouter tableau 4";
-                document.getElementById("output2").style.display = "none";
+           if (document.getElementById("button1").innerHTML == "Effacer tableau 4") {
+                document.getElementById("button1").innerHTML = "Ajouter tableau 4";
+                x.style.display = "none";
             }
-            else if(bouton.innerHTML == "Ajouter tableau 4"){
-                bouton.innerHTML = "Effacer tableau 4";
-                document.getElementById("output2").style.display = "inline";
+            else if (document.getElementById("button1").innerHTML == "Ajouter tableau 4") {
+                document.getElementById("button1").innerHTML = "Effacer tableau 4";
+                x.style.display = "inline-block";
             }
         }
 
@@ -57,7 +56,7 @@
 
 <body>
 
-    <button id="button1" onclick= "modificationTableau()">Effacer tableau 4</button>
+    <button id="button1" value="TableauOuvert" onclick= "modificationTableau()">Effacer tableau 4</button>
 
     <h1>TD1, étape 2</h1>
 
