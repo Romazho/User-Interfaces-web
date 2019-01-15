@@ -1,4 +1,4 @@
-<!doctype html>
+﻿<!doctype html>
 
 <html>
 
@@ -29,8 +29,6 @@
             border-bottom: 1px solid black;
         }
 
-
-
     </style>
 
     <script>
@@ -47,7 +45,10 @@
                 x.style.display = "inline-block";
             }
         }
-    ////////////////////////////////////////////
+
+    ///////////////////////////////////////////////////////////////////
+        //si tu veux tu peux changer tous ce que tu veux ici... j'ai essayé des trucs, mais rien marche :(
+
         function expo(x) {
             return Number.parseFloat(x).toExponential(2);
         }
@@ -55,9 +56,12 @@
         function myFunction(num) {
             //var num = 5.56789;
             var n = num.toExponential(2);
-            document.getElementById("output1").innerHTML = n;
+            //document.getElementById("output2").replaceChild("output1"); 
+            document.getElementById("output2").innerHTML = n;
         }
-        
+
+        document.getElementById("output2").style.property = (0).toExponential(2);
+    ///////////////////////////////////////////////////////////////////
 
     </script>
 
@@ -66,17 +70,12 @@
 </head>
 
 <body>
-    <!--  -->
-    <p id ="test"> </p> 
 
-    <!--  -->
+    <button id="button1" onclick="modificationTableau()">Effacer tableau 4</button>
 
-    <button id="button1" onclick= "modificationTableau()">Effacer tableau 4</button>
-
-    <button id="button2" onclick= "myFunction()">Convertir en exponentiel</button>
+    <button id="button2" onclick="myFunction(5.65441)">Convertir en exponentiel</button>
 
     <h1>TD1, étape 3</h1>
-
     <table id="param">
         <tr border-spacing="0px">
             <td>T</td>
@@ -94,16 +93,11 @@
             <td>0 dm3</td>
         </tr>
     </table>
-
     <table id="constituents">
-        <div>
-            <tr>
-
-                <th> STREAM CONSTITUENTS</th>
-                <th> AMOUNT/mol </th>
-
-            </tr>
-        </div>
+        <tr>
+            <th> STREAM CONSTITUENTS</th>
+            <th> AMOUNT/mol </th>
+        </tr>
         <tr>
             <td>Mg</td>
             <td>1.0000E+00</td>
@@ -117,7 +111,6 @@
             <td>2.0000E+00</td>
         </tr>
     </table>
-
     <table id="output1">
         <tr>
             <th></th>
@@ -168,7 +161,6 @@
             <td>2.1821E-20</td>
         </tr>
     </table>
-
     <table id="output2">
         <tr>
             <th></th>
@@ -381,7 +373,6 @@
             <td>9.0088E-57</td>
         </tr>
     </table>
-
     <table id="part1">
         <tr class="trCustom">
             <td>Cp</td>
@@ -405,7 +396,6 @@
             <td>0.00000E+00</td>
         </tr>
     </table>
-
     <table id="part2">
         <tr class="trCustom">
             <td></td>
@@ -457,7 +447,6 @@
             <td>-5.93271E+04</td>
         </tr>
     </table>
-
     Cut-off limit for gaseous fractions/phase activities = 1.00E-70 Databases: FactPS 7.2 Data Search options: exclude
     gas ions; organic CxHy.. X(max) = 2; min soln cpts = 2
 
