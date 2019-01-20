@@ -1,8 +1,4 @@
-<<<<<<< Updated upstream
-<!doctype html>
-=======
 ﻿<!doctype html>
->>>>>>> Stashed changes
 
 <html>
 
@@ -11,53 +7,37 @@
     <meta HTTP-EQUIV="Expires" CONTENT="-1">
     <meta HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=utf-8">
     <style TYPE="text/css">
-            /*modification des attributs de la balise table*/
-        table{
+        /*modification des attributs de la balise table*/
+        table {
             border-top: 3px solid black;
             border-bottom: 3px solid black;
             border-collapse: collapse;
-            margin:7px;
+            margin: 7px;
         }
+
         /* modification des attributs de la balise th */
-<<<<<<< Updated upstream
         th {
             background-color: #f7eecf;
             margin: 0px;
             padding: 0px;
             border-bottom: 1px solid black;
         }
+
         /* création d'une classe personalisée pour les tableaux à deux rangés d'entête */
         .trCustom {
             background-color: #f7eecf;
             font-weight: bold;
             text-align: center;
-=======
-        th{
-            background-color:cornsilk;
-            margin:0px;
-            padding : 0px;
             border-bottom: 1px solid black;
         }
-        /* création d'une classe personalisée pour les tableaux à deux rangés d'entête */
-        .trCustom{
-            background-color:cornsilk;
-            margin:5px;
-            padding : 5px;
-            font-weight: bold;
-            text-align:center;
->>>>>>> Stashed changes
-            border-bottom: 1px solid black;
-        }
-
     </style>
 
     <script>
-<<<<<<< Updated upstream
-        
+
         function modificationTableau() {
             var x = document.getElementById("output2");
 
-           if (document.getElementById("button1").innerHTML == "Effacer tableau 4") {
+            if (document.getElementById("button1").innerHTML == "Effacer tableau 4") {
                 document.getElementById("button1").innerHTML = "Ajouter tableau 4";
                 x.style.display = "none";
             }
@@ -67,46 +47,6 @@
             }
         }
 
-    ///////////////////////////////////////////////////////////////////
-        //si tu veux tu peux changer tous ce que tu veux ici... j'ai essayé des trucs, mais rien marche :(
-
-        function expo(x) {
-            return Number.parseFloat(x).toExponential(2);
-        }
-        
-        function myFunction(num) {
-            //var num = 5.56789;
-            var n = num.toExponential(2);
-            //document.getElementById("output2").replaceChild("output1"); 
-            document.getElementById("output2").innerHTML = n;
-        }
-
-=======
-
-        function modificationTableau(){
-            var bouton = document.getElementById("button1");
-            if(bouton.innerHTML == "Effacer tableau 4"){
-                bouton.innerHTML = "Ajouter tableau 4";
-                document.getElementById("output2").style.display = "none";
-            }
-            else if(bouton.innerHTML == "Ajouter tableau 4"){
-                bouton.innerHTML = "Effacer tableau 4";
-                document.getElementById("output2").style.display = "inline";
-            }
-        }
-
-    </script>
-
-    <script>
-     var doc = document.querySelectorAll('*');
-     doc.forEach(function(node) {
-        if(isNumeric($(this))){
-            this.toExponential(2);
-        }
-
-    });
-    
->>>>>>> Stashed changes
     </script>
 
     <title>TD1, données initiales</title>
@@ -114,21 +54,10 @@
 </head>
 
 <body>
-<<<<<<< Updated upstream
-    <!--  -->
-    <p id ="test"> </p> 
 
-    <button id="button1" onclick="modificationTableau()">Effacer tableau 4</button>
-
-    <button id="button2" onclick="myFunction(5.65441)">Convertir en exponentiel</button>
-
-    <h1>TD1, étape 3</h1>
-=======
-
-    <button id="button1" onclick= "modificationTableau()">Effacer tableau 4</button>
+    <button id = "button1" onclick = "modificationTableau()">Effacer tableau 4</button>
 
     <h1>TD1, étape 2</h1>
->>>>>>> Stashed changes
 
     <table id="param">
         <tr border-spacing="0px">
@@ -147,10 +76,13 @@
             <td>0 dm3</td>
         </tr>
     </table>
+
     <table id="constituents">
         <tr>
+
             <th> STREAM CONSTITUENTS</th>
             <th> AMOUNT/mol </th>
+
         </tr>
         <tr>
             <td>Mg</td>
@@ -165,6 +97,7 @@
             <td>2.0000E+00</td>
         </tr>
     </table>
+
     <table id="output1">
         <tr>
             <th></th>
@@ -215,6 +148,7 @@
             <td>2.1821E-20</td>
         </tr>
     </table>
+
     <table id="output2">
         <tr>
             <th></th>
@@ -427,6 +361,7 @@
             <td>9.0088E-57</td>
         </tr>
     </table>
+
     <table id="part1">
         <tr class="trCustom">
             <td>Cp</td>
@@ -450,6 +385,7 @@
             <td>0.00000E+00</td>
         </tr>
     </table>
+
     <table id="part2">
         <tr class="trCustom">
             <td></td>
@@ -501,12 +437,27 @@
             <td>-5.93271E+04</td>
         </tr>
     </table>
-<<<<<<< Updated upstream
 
-=======
->>>>>>> Stashed changes
     Cut-off limit for gaseous fractions/phase activities = 1.00E-70 Databases: FactPS 7.2 Data Search options: exclude
     gas ions; organic CxHy.. X(max) = 2; min soln cpts = 2
+
+    <script>
+
+        var x = document.getElementsByTagName("td");
+
+        for (i = 0; i < x.length; i++) {
+            
+            if( parseFloat(x[i].innerHTML) || (parseFloat(x[i].innerHTML) == 0) ) {
+                x[i].innerHTML = parseFloat(x[i].innerHTML).toExponential(2);
+            }
+           
+            if (parseFloat(x[i].innerHTML) <= 1e-4) {
+                x[i].style.color = "lightgrey";
+            }
+        }
+
+    </script>
+
 
 </body>
 
