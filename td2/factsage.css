@@ -1,5 +1,71 @@
+
         
-        A:link {
+        .general{
+            display: grid;
+            grid-template-columns: auto;
+            grid-template-rows: auto auto auto auto;
+            background-color: lightgray;
+            border: 1px solid black;
+            padding: 10px;
+            
+        }
+
+        .container1{
+            background-color: lightgray;
+            border: 1px solid black;
+        }
+
+        .container2{
+            display: grid;
+            grid-template-columns: auto auto auto;
+            grid-template-rows: auto;
+
+            grid-template-columns: [columns-start] 25% [columns-end columns-start] 25% [columns-end];;
+
+            background-color: yellow;
+            border: 1px solid black;
+            padding: 10px;
+        }
+
+        .container30{
+            display: grid;
+            grid-template-columns: auto auto;
+            grid-template-rows: auto;
+            background-color: rgba(247, 240, 149, 0.411);
+            border: 2px solid black;
+            padding: 10px;
+        }
+
+        .container31{
+            background-color: rgba(247, 240, 149, 0.411);
+            grid-template-rows: [row1-start] 50px [row1-end row2-start] 25% [row2-end];
+        }
+
+        .container32{
+            background-color: rgba(247, 240, 149, 0.411);;
+            grid-template-columns: 300px 150px auto 300px 150px;
+            grid-template-rows: [row1-start] 25% [row1-end row2-start] 25% [row2-end];
+        }
+
+        .container4{
+            background-color: rgba(235, 227, 115, 0.411);
+            border: 2px solid black;
+            padding: 10px;
+        }
+
+        .container5{
+            background-color: yellow;
+            border: 1px solid black;
+            padding: 10px;
+        }
+
+
+
+
+
+
+                
+        /* A:link {
             color: #0033CC;
             text-decoration: none
         }
@@ -17,4 +83,4 @@
 
         .link {
             text-decoration: none;
-        }
+        } */
