@@ -1,0 +1,20 @@
+        
+        A:link {
+            color: #0033CC;
+            text-decoration: none
+        }
+
+        A:visited {
+            color: #993300;
+            text-decoration: none
+        }
+
+        A:hover {
+            color: #000066;
+            text-decoration: none;
+            background-color: lightgrey
+        }
+
+        .link {
+            text-decoration: none;
+        }

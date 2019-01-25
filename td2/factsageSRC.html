@@ -1,0 +1,246 @@
+﻿
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<HTML>
+<HEAD>
+    <TITLE>F*A*C*T - EQUILIB-Web</TITLE>
+    <META http-equiv=Content-Type content="text/html; charset=windows-1252">
+    <META content="MSHTML 5.50.4522.1800" name=GENERATOR>
+
+</HEAD>
+<!--style="background-color:lightgray;"-->
+<BODY bgColor=#ffffff text=#000088 topmargin="0" onLoad="fillform();MM_preloadImages('show_me_over.jpg')">
+    <div align="left"></div>
+    <table width="100%" border="0" cellpadding="1" cellspacing="0" bgcolor="#000066">
+        <tr>
+            <td>
+                <table width="100%" border="0" cellpadding="5" cellspacing="0" bgcolor="#FFFFFF">
+                    <tr>
+                        <td>
+                            <CENTER>
+                                <font face="Trebuchet MS, Arial">
+                                    <B>
+                                        <font color="#0B075E" size="2">
+                                            -
+                                            chemical equilibria of an ideal gas with pure solids and liquids
+                                        </font>
+                                    </B>
+                                </font>
+                            </CENTER>
+                            <FORM action=equili.php method=post name="myform">
+                                <CENTER>
+                                    <table width="100%" border="3" align="center" cellpadding="4" bordercolor="#003366">
+                                        <tr>
+                                            <td bordercolor="#993333">
+                                                <div align="center">
+                                                    <center>
+                                                        <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                                                            <tr>
+                                                                <td>
+                                                                    <font color="#0B075E" face="Trebuchet MS, Arial">
+                                                                        <b>
+                                                                            <input type=hidden value=EQUILIB name=PROGRAM>
+                                                                            <font size="1">T:</font>
+                                                                        </b> <font size="1">
+                                                                            <input maxlength=8 size=8 value=1000 name=TMIN>
+                                                                            <strong>Units:</strong>
+                                                                            <select name="T_units" size="1" id="T_units">
+                                                                                <option value="TK" selected>K</option>
+                                                                                <option value="TC">C</option>
+                                                                            </select>
+                                                                            ,
+                                                                        </font>
+                                                                    </font>
+                                                                </td>
+                                                                <td>
+                                                                    <center>
+                                                                        <font color="#0B075E" face="Trebuchet MS, Arial">
+                                                                            <font size="1">
+                                                                                <b>mass:</b>
+                                                                                <select size=1 name=MASS>
+                                                                                    <option value="X">mole</option>
+                                                                                    <option value="%" selected>gram</option>
+                                                                                </select>
+                                                                                ,
+                                                                            </font>
+                                                                        </font>
+                                                                    </center>
+                                                                </td>
+                                                                <td>
+                                                                    <div align="right">
+                                                                        <font color="#0B075E" face="Trebuchet MS, Arial">
+                                                                            <font size="1">
+                                                                                <b>P:</b>
+                                                                                <input name="P_value" type="text" id="P_value2" value=1 size="4">
+                                                                                <strong>Units: </strong>
+                                                                                <select size=1 name=PRESSURE>
+                                                                                    <option value="ATM" selected>atm</option>
+                                                                                    <option value="BAR">bar</option>
+                                                                                </select>
+                                                                            </font>
+                                                                            <input type=hidden value=tk name=TEMPERATURE>
+                                                                            <input type=hidden value=noaqua name=AQUEOUS>
+                                                                        </font>
+                                                                    </div>
+                                                                </td>
+                                                            </tr>
+                                                        </table>
+                                                        <font face="Trebuchet MS, Arial">
+                                                            <br>
+                                                        </font>
+                                                        <table border="0" cellpadding="1" cellspacing="0" bgcolor="eeeeee">
+                                                            <tr>
+                                                                <td><font size="1" face="Trebuchet MS, Arial">Mass</font></td>
+                                                                <td><font size="1" face="Trebuchet MS, Arial">Species</font></td>
+                                                                <td><font size="1" face="Trebuchet MS, Arial">&nbsp;</font></td>
+                                                                <td><font size="1" face="Trebuchet MS, Arial">Mass</font></td>
+                                                                <td><font size="1" face="Trebuchet MS, Arial">Species</font></td>
+                                                                <td><font size="1" face="Trebuchet MS, Arial">&nbsp;</font></td>
+                                                                <td><font size="1" face="Trebuchet MS, Arial">Mass</font></td>
+                                                                <td><font size="1" face="Trebuchet MS, Arial">Species</font></td>
+                                                                <td><font size="1" face="Trebuchet MS, Arial">&nbsp;</font></td>
+                                                                <td><font size="1" face="Trebuchet MS, Arial">Mass</font></td>
+                                                                <td><font size="1" face="Trebuchet MS, Arial">Species</font></td>
+                                                                <td><font size="1" face="Trebuchet MS, Arial">&nbsp;</font></td>
+                                                                <td><font size="1" face="Trebuchet MS, Arial">&nbsp;</font></td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>
+                                                                    <font color="#0B075E" face="Trebuchet MS, Arial">
+                                                                        <input name="react1n" type="text" id="react1n" value="" size="5">
+                                                                    </font>
+                                                                </td>
+                                                                <td>
+                                                                    <font color="#0B075E" face="Trebuchet MS, Arial">
+                                                                        <input maxlength=15 size=5 name=REACT1 value="Si">
+                                                                    </font>
+                                                                </td>
+                                                                <td><font color="#0B075E" face="Trebuchet MS, Arial">&nbsp;+&nbsp;</font></td>
+                                                                <td>
+                                                                    <font color="#0B075E" face="Trebuchet MS, Arial">
+                                                                        <input name="react2n" type="text" id="react2n" value="1.5" size="5">
+                                                                    </font>
+                                                                </td>
+                                                                <td>
+                                                                    <font color="#0B075E" face="Trebuchet MS, Arial">
+                                                                        <input maxlength=15 size=5 name=REACT2 value="O2">
+                                                                    </font>
+                                                                </td>
+                                                                <td><font color="#0B075E" face="Trebuchet MS, Arial">&nbsp;+&nbsp;</font></td>
+                                                                <td>
+                                                                    <font color="#0B075E" face="Trebuchet MS, Arial">
+                                                                        <input name="react3n" type="text" id="react3n3" value="" size="5">
+                                                                    </font>
+                                                                </td>
+                                                                <td>
+                                                                    <font color="#0B075E" face="Trebuchet MS, Arial">
+                                                                        <input maxlength=15 size=5 name=REACT3 value="">
+                                                                    </font>
+                                                                </td>
+                                                                <td><font color="#0B075E" face="Trebuchet MS, Arial">&nbsp;+&nbsp;</font></td>
+                                                                <td>
+                                                                    <font color="#0B075E" face="Trebuchet MS, Arial">
+                                                                        <input name="react4n" type="text" id="react4n" value="" size="5">
+                                                                    </font>
+                                                                </td>
+                                                                <td>
+                                                                    <font color="#0B075E" face="Trebuchet MS, Arial">
+                                                                        <input maxlength=15 size=5 name=REACT4 value="">
+                                                                    </font>
+                                                                </td>
+                                                                <td><font color="#0B075E" face="Trebuchet MS, Arial">&nbsp;=&nbsp;</font></td>
+                                                                <td>
+                                                                    <font color="#0B075E" face="Trebuchet MS, Arial">
+                                                                        ?
+                                                                    </font>
+                                                                </td>
+                                                            </tr>
+                                                        </table>
+                                                        <font color="#0B075E" face="Trebuchet MS, Arial">
+                                                            &nbsp;
+                                                            &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                                                            <input type=hidden name=REACT5>
+                                                        </font>
+                                                    </center>
+                                                    <center>
+                                                        <table width="100%" border="0" cellpadding="2" cellspacing="0">
+                                                            <tr>
+                                                                <td><font color="#0B075E" size="1" face="Trebuchet MS, Arial"><b>Output:</b></font></td>
+                                                                <td>
+                                                                    <font color="#0B075E" size="1" face="Trebuchet MS, Arial">
+                                                                        Concentration
+                                                                        cut-off
+                                                                    </font>
+                                                                </td>
+                                                                <td>
+                                                                    <font color="#0B075E" face="Trebuchet MS, Arial">
+                                                                        <select size=1 name=CUT>
+                                                                            <option value="1E-70" selected>1e-70</option>
+                                                                            <option value="1E-50">1e-50</option>
+                                                                            <option value="1E-30">1e-30</option>
+                                                                            <option value="1E-20">1e-20</option>
+                                                                            <option value="1E-15">1e-15</option>
+                                                                            <option value="1E-10">1e-10</option>
+                                                                            <option value="1E-8">1e-8</option>
+                                                                            <option value="1E-6">1e-6</option>
+                                                                            <option value="1E-5">1e-5</option>
+                                                                        </select>
+                                                                    </font>
+                                                                </td>
+                                                                <td width="230" rowspan="3" valign="bottom">
+                                                                    <div align="right">
+                                                                        <font color="#0B075E" face="Trebuchet MS, Arial">
+                                                                            <input name="clear" type="button" id="clear2" value="Clear" onClick="clearform();">
+                                                                            <input name="Button" type=button value=Default onClick="default_values();">
+                                                                        </font><font color="#0B075E" size="2" face="Trebuchet MS, Arial">
+                                                                            <INPUT name="submit" type=submit value="Calculate &gt;&gt;">
+                                                                        </font>
+                                                                    </div>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td><font size="1" face="Trebuchet MS, Arial">&nbsp;</font></td>
+                                                                <td><font color="#0B075E" size="1" face="Trebuchet MS, Arial">Format</font></td>
+                                                                <td>
+                                                                    <font color="#0B075E" face="Trebuchet MS, Arial">
+                                                                        <select name=format size=1 id="select">
+                                                                            <option value="OUTC">ChemSage</option>
+                                                                            <option value="OUTB" selected>Extended</option>
+                                                                            <option value="OUTF">FACT</option>
+                                                                        </select>
+                                                                    </font>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td><font size="1" face="Trebuchet MS, Arial">&nbsp;</font></td>
+                                                                <td><font color="#0B075E" size="1" face="Trebuchet MS, Arial">Distribution</font></td>
+                                                                <td>
+                                                                    <font color="#0B075E" face="Trebuchet MS, Arial">
+                                                                        <select size=1 name=DIST>
+                                                                            DIST =
+                                                                            <option value="NODIST" selected>no</option>
+                                                                            <option value="DIST">yes</option>
+                                                                        </select>
+                                                                    </font>
+                                                                </td>
+                                                            </tr>
+                                                        </table>
+                                                    </center>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </table>
+
+                                </CENTER>
+                            </FORM>
+
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+    <H2>&nbsp;</H2>
+    <H2>&nbsp;</H2>
+    <P></P>
+</BODY>
+</HTML>
