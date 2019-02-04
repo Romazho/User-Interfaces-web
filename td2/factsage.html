@@ -1,4 +1,4 @@
-<DOCTYPE <!DOCTYPE html>
+﻿<DOCTYPE <!DOCTYPE html>
 <html>
 <head>
     <TITLE>F*A*C*T - EQUILIB-Web</TITLE>
@@ -11,103 +11,147 @@
 </head>
 
 <body>
-     <div class="general"  >  <!--cellspacing="10px"-->
-        <div class="container1" >
+    <div class="general">
+<!--cellspacing="10px"-->
+        <div class="container1">
             Chemical equilibria of an ideal gas with pure solids and liquids
         </div>
-            
+
         <div class="container2">
-            <b> 
-            <label> T: <input name="T"></label>
-            <label>Units: </label>
-
+            <div id="21">
+                <b>
+                    <label> T: <input name="T"></label>
+                    <label>Units: </label>
+                </b>
                 <select name="T_units" size="1" id="T_units">
-                        <option value="TK" selected>K</option>
-                        <option value="TC">C</option>
+                    <option value="TK" selected>K</option>
+                    <option value="TC">C</option>
                 </select>
-
-            <label>mass: </label>
-            <select size=1 name=MASS>
-                <option value="X">mole</option>
-                <option value="%" selected>gram</option>
-            </select>
-
-            <label>P: </label>
-            <input name="P"></label>
-            <label>Units: </label>
-            <select size=1 name=PRESSURE>
+            </div>
+            <div id="22">
+                <b>
+                    <label>mass: </label>
+                </b>
+                <select size=1 name=MASS>
+                    <option value="X">mole</option>
+                    <option value="%" selected>gram</option>
+                </select>
+            </div>
+            <div id="23">
+                <b>
+                    <label>P: </label>
+                    <input name="P" size="10">
+                    <label>Units: </label>
+                </b>
+                <select size=1 name=PRESSURE>
                     <option value="ATM" selected>atm</option>
                     <option value="BAR">bar</option>
-            </select>
-
-            </b>
+                </select>
+            </div>
         </div>
 
-        <div class="container30">
-            <div class="container31">
-                <label>Mass </label>
-                <input name="mass1">
-
-                <label>Species </label>
-                <input name="Species1"> +
+        <div class="container3">
+            <div class="c31">
+                <div class="311">
+                    <div>Mass </div>
+                    <input name="mass1" size="10">
+                </div>
+                <div class="312">
+                    <div>
+                        Mass
+                    </div>
+                    <input name="mass2" size="10">
+                </div>
             </div>
 
-            <div class="container32">
-                <label>Mass </label>
-                <input name="mass2">
-
-                <label>Species </label>
-                <input name="mass2">
+            <div class="c32">
+                <div class="321">
+                    <div>Species </div>
+                    <input name="Species1" size="10">  +
+                </div>
+                <div id="322">
+                    <div>Species </div>
+                    <input name="Species2" size="10">
+                    <button name="plus" style="height:22px;width:40px"> + </button>
+                </div>
             </div>
         </div>
 
         <div class="container4">
 
             <div class="container5">
-                <b>
-                    Output:
-                </b>
-                <label>Concentration cut-off </label>
-                <select size=1 name=CUT>
-                        <option value="1E-70" selected>1e-70</option>
-                        <option value="1E-50">1e-50</option>
-                        <option value="1E-30">1e-30</option>
-                        <option value="1E-20">1e-20</option>
-                        <option value="1E-15">1e-15</option>
-                        <option value="1E-10">1e-10</option>
-                        <option value="1E-8">1e-8</option>
-                        <option value="1E-6">1e-6</option>
-                        <option value="1E-5">1e-5</option>
-                </select>
+                <div class="51">
+                    <b>
+                        Output:
+                    </b>
+                </div>
 
-                <label>Format </label>
-                <select name=format size=1 id="select">
-                        <option value="OUTC">ChemSage</option>
-                        <option value="OUTB" selected>Extended</option>
-                        <option value="OUTF">FACT</option>
-                </select>
+                <div class="c52">
+                    <div>
+                        <label>Concentration cut-off </label>
+                    </div>
+                    <div>
+                        <label>Format </label>
+                    </div>
+                    <div>
+                        <label>Distribution </label>
+                    </div>
 
-                <label>Distribution </label>
-                <select size=1 name=DIST>
-                        <option value="NODIST" selected>no</option>
-                        <option value="DIST">yes</option>
-                </select>
+                </div>
+
+                <div class="c52">
+                    <div>
+                        <select size=1 name=CUT style="width:60px">
+                            <option value="1E-70" selected>1e-70</option>
+                            <option value="1E-50">1e-50</option>
+                            <option value="1E-30">1e-30</option>
+                            <option value="1E-20">1e-20</option>
+                            <option value="1E-15">1e-15</option>
+                            <option value="1E-10">1e-10</option>
+                            <option value="1E-8">1e-8</option>
+                            <option value="1E-6">1e-6</option>
+                            <option value="1E-5">1e-5</option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <select name=format size=1 id="select" style="width:90px">
+                            <option value="OUTC">ChemSage</option>
+                            <option value="OUTB" selected>Extended</option>
+                            <option value="OUTF">FACT</option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <select size=1 name=DIST style="width:40px">
+                            <option value="NODIST" selected>no</option>
+                            <option value="DIST">yes</option>
+                        </select>
+                    </div>
+                </div>
 
             </div>
+
+            <div>
+                <button > Clear </button>
+                <button> Default </button>
+                <button> Calculate >>> </button>
+            </div>
+
         </div>
 
     </div>
 
-    <!-- <table width="100%"  style="background-color:gray;" border="1" cellspacing="10">
+<!-- <table width="100%"  style="background-color:gray;" border="1" cellspacing="10">
 
-        <td>
-            <table  style="background-color:gray;" >
+    <td>
+        <table  style="background-color:gray;" >
 
-                <td>Chemical equilibria of an ideal gas with pure solids and liquids </td>
+            <td>Chemical equilibria of an ideal gas with pure solids and liquids </td>
 
-            </table>
-        </td>
+        </table>
+    </td>
 
-    </table> -->
+</table> -->
 </body>
 </html>
