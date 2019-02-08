@@ -148,23 +148,40 @@
 
         var xmlhttp = new XMLHttpRequest();
         xmlhttp.onreadystatechange = function() {
+
+        var  x, txt = "";
           if (this.readyState == 4 && this.status == 200) {
             var myObj = JSON.parse(this.responseText);
-            //document.getElementById("resultat").innerHTML = "Formule: "
-            //+ myObj.formule + myObj.output1[0].libelle;
+            document.getElementById("resultat").innerHTML = "Formule: "
+            + myObj.formule + myObj.output1[0].libelle;
+
+ 
+            
+
+
+            
           }
         };
 
         xmlhttp.open("POST", "data-output.json", true);
-        xmlhttp.send();
+        //il ne faut get un json, il faut mettre un url à la place du fichier json...
+        xmlhttp.send(); //c'est ici qu'on peut envoyer notre donnée
     //}
 
-    document.write(myObj.formule);
+           txt = "<table border='1'> Formule </table>";
+            /*for (x in myObj) {
+                txt += "<tr><td>" + myObj[x].name + "</td></tr>";
+            }*/
+            //txt += "</table>"    ;
+            document.getElementById("res").innerHTML = txt;
+
         </script>
 
     <div  id="resultat">
 
     </div>
+
+    <div id="res"></div>
 
 </body>
 </html>
