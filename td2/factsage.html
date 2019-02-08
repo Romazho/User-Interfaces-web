@@ -140,8 +140,16 @@
 
         </div>
 
+
     </div>
 
+
+    <div  id="resultat">
+
+    </div>
+
+    <div id="res"></div>
+    
     <script>
 
         //function affichage() {
@@ -156,14 +164,15 @@
             + myObj.formule + myObj.output1[0].libelle;
 
  
-            
+            console.log(myObj);
 
 
             
           }
         };
 
-        xmlhttp.open("POST", "data-output.json", true);
+        xmlhttp.open("POST", "http://localhost:8080", true);
+        // était: "data-output.json"
         //il ne faut get un json, il faut mettre un url à la place du fichier json...
         xmlhttp.send(); //c'est ici qu'on peut envoyer notre donnée
     //}
@@ -173,15 +182,9 @@
                 txt += "<tr><td>" + myObj[x].name + "</td></tr>";
             }*/
             //txt += "</table>"    ;
-            document.getElementById("res").innerHTML = txt;
+            document.getElementById("res").innerText = txt;
 
         </script>
-
-    <div  id="resultat">
-
-    </div>
-
-    <div id="res"></div>
 
 </body>
 </html>
