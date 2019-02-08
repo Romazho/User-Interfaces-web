@@ -60,18 +60,18 @@
                     <div>
                         Mass
                     </div>
-                    <input name="mass2" size="10">
+                    <input value="1.5" name="mass2" size="10">
                 </div>
             </div>
 
             <div class="c32">
                 <div class="321">
                     <div>Species </div>
-                    <input name="Species1" size="10">  +
+                    <input value="Si" name="Species1" size="10">  +
                 </div>
                 <div id="322">
                     <div>Species </div>
-                    <input name="Species2" size="10">
+                    <input value="O2" name="Species2" size="10">
                     <button name="plus" style="height:22px;width:40px"> + </button>
                 </div>
             </div>
@@ -135,23 +135,36 @@
             <div>
                 <button > Clear </button>
                 <button> Default </button>
-                <button> Calculate >>> </button>
+                <button id="calcul" onclick = "affichage()"> Calculate >>> </button>
             </div>
 
         </div>
 
     </div>
 
-<!-- <table width="100%"  style="background-color:gray;" border="1" cellspacing="10">
+    <script>
 
-    <td>
-        <table  style="background-color:gray;" >
+        //function affichage() {
 
-            <td>Chemical equilibria of an ideal gas with pure solids and liquids </td>
+        var xmlhttp = new XMLHttpRequest();
+        xmlhttp.onreadystatechange = function() {
+          if (this.readyState == 4 && this.status == 200) {
+            var myObj = JSON.parse(this.responseText);
+            //document.getElementById("resultat").innerHTML = "Formule: "
+            //+ myObj.formule + myObj.output1[0].libelle;
+          }
+        };
 
-        </table>
-    </td>
+        xmlhttp.open("POST", "data-output.json", true);
+        xmlhttp.send();
+    //}
 
-</table> -->
+    document.write(myObj.formule);
+        </script>
+
+    <div  id="resultat">
+
+    </div>
+
 </body>
 </html>
