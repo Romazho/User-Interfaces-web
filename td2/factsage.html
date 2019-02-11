@@ -140,51 +140,13 @@
 
         </div>
 
-
     </div>
-
 
     <div  id="resultat">
-
+        <center> 
+            <img src="loader.gif" id="load" style="visibility:hidden;">
+        </center>
     </div>
-
-    <div id="res"></div>
-    
-    <script>
-
-        //function affichage() {
-
-        var xmlhttp = new XMLHttpRequest();
-        xmlhttp.onreadystatechange = function() {
-
-        var  x, txt = "";
-          if (this.readyState == 4 && this.status == 200) {
-            var myObj = JSON.parse(this.responseText);
-            document.getElementById("resultat").innerHTML = "Formule: "
-            + myObj.formule + myObj.output1[0].libelle;
-
- 
-            console.log(myObj);
-
-
-            
-          }
-        };
-
-        xmlhttp.open("POST", "http://localhost:8080", true);
-        // était: "data-output.json"
-        //il ne faut get un json, il faut mettre un url à la place du fichier json...
-        xmlhttp.send(); //c'est ici qu'on peut envoyer notre donnée
-    //}
-
-           txt = "<table border='1'> Formule </table>";
-            /*for (x in myObj) {
-                txt += "<tr><td>" + myObj[x].name + "</td></tr>";
-            }*/
-            //txt += "</table>"    ;
-            document.getElementById("res").innerText = txt;
-
-        </script>
 
 </body>
 </html>
