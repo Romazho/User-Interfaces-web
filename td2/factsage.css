@@ -63,21 +63,6 @@
 
         }
 
-        .c31{
-            display: grid;
-            grid-template-columns: auto;
-            grid-template-rows: auto auto;
-            grid-row-gap: 5px;
-        }
-
-        .c32{
-            display: grid;
-            grid-template-columns: auto;
-            grid-template-rows: auto auto;
-            grid-row-gap: 5px;
-                
-        }
-
         .container4{
             display: grid;
             grid-template-columns: auto auto;

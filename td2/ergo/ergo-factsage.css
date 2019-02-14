@@ -1,0 +1,97 @@
+
+        
+        .general{
+            display: grid;
+            grid-template-columns: auto;
+            grid-template-rows: auto auto auto auto;
+            background-color: lightgray;
+            border: 1px solid black;
+            padding: 10px;
+            
+            grid-row-gap: 10px;
+        }
+
+        table {
+            border-top: 3px solid black;
+            border-bottom: 3px solid black;
+            border-collapse: collapse;
+            margin: 7px;
+        }
+
+        /* modification des attributs de la balise th */
+        th {
+            background-color: #f7eecf;
+            margin: 0px;
+            padding: 0px;
+            border-bottom: 1px solid black;
+        }
+
+        .trCustom {
+            background-color: #f7eecf;
+            margin: 5px;
+            padding: 5px;
+            font-weight: bold;
+            text-align: center;
+            border-bottom: 1px solid black;
+        }
+
+        .container1{
+            background-color: lightgray;
+            border: 1px solid black;
+        }
+
+        .container2{
+            display: grid;
+            grid-template-columns: auto auto auto;
+            grid-template-rows: auto;
+            grid-column-gap: 20px;
+
+            background-color: yellow;
+            border: 1px solid black;
+            padding: 10px;
+        }
+
+
+        .container3{
+            display: grid;
+            grid-template-columns: auto auto auto auto auto  auto;
+            grid-template-rows: auto;
+
+            background-color:#f4eda2;
+            border: 2px solid black;
+            padding: 10px;
+
+        }
+
+        .container4{
+            display: grid;
+            grid-template-columns: auto auto;
+            grid-template-rows: auto;
+
+            grid-row-gap: 10px;
+            grid-column-gap: 10px;
+
+            background-color:#f4e4a3;
+            border: 2px solid black;
+            padding: 10px;
+        }
+
+        .container5{
+            display: grid;
+            grid-template-columns: auto auto auto;
+            grid-template-rows: auto;
+
+            background-color: #BDB76B;
+            border: 1px solid black;
+            padding: 10px;
+
+            grid-column-gap: 20px;
+        }
+
+        .c52{
+            display: grid;
+            grid-template-columns: auto;
+            grid-template-rows: auto auto auto;
+
+            grid-row-gap: 10px;
+        }

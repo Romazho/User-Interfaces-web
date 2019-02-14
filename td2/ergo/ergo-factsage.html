@@ -1,0 +1,157 @@
+﻿<DOCTYPE <!DOCTYPE html>
+<html>
+<head>
+    <TITLE>F*A*C*T - EQUILIB-Web</TITLE>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="ergo-factsage.css" />
+    <script src="ergo-factsage.js"></script>
+</head>
+
+<body>
+    <div class="general">
+
+        <div class="container1">
+            Chemical equilibria of an ideal gas with pure solids and liquids
+        </div>
+
+        <div class="container2">
+            <div id="21">
+                <b>
+                    <label> T: <input name="T"></label>
+                    <label>Units: </label>
+                </b>
+                <select name="T_units" size="1" id="T_units">
+                    <option value="TK" selected>K</option>
+                    <option value="TC">C</option>
+                </select>
+            </div>
+            <div id="22">
+                <b>
+                    <label>mass: </label>
+                </b>
+                <select size=1 name=MASS>
+                    <option value="X">mole</option>
+                    <option value="%" selected>gram</option>
+                </select>
+            </div>
+            <div id="23">
+                <b>
+                    <label>P: </label>
+                    <input name="P" size="10">
+                    <label>Units: </label>
+                </b>
+                <select size=1 name=PRESSURE>
+                    <option value="ATM" selected>atm</option>
+                    <option value="BAR">bar</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="container3">
+            <div class="c31">
+                Mass 
+                <input name="mass1" size="10">
+                Species
+                <input value="Si" name="Species1" size="10">  +
+            </div>
+
+            <div class="c31">
+                Mass
+                <input value="1.5" name="mass1" size="10">
+                Species
+                <input value="O2" name="Species1" size="10">  +
+            </div>
+
+            <div class="c31">
+                Mass
+                <input name="mass1" size="10">
+                Species
+                <input name="Species1" size="10">  +
+            </div>
+
+            <div class="c31">
+                Mass
+                <input name="mass1" size="10">
+                Species
+                <input name="Species1" size="10">  = ?
+            </div>
+
+        </div>
+    </div>
+
+        <div class="container4">
+
+            <div class="container5">
+                <div class="51">
+                    <b>
+                        Output:
+                    </b>
+                </div>
+
+                <div class="c52">
+                    <div>
+                        <label>Concentration cut-off </label>
+                    </div>
+                    <div>
+                        <label>Format </label>
+                    </div>
+                    <div>
+                        <label>Distribution </label>
+                    </div>
+
+                </div>
+
+                <div class="c52">
+                    <div>
+                        <select size=1 name=CUT style="width:60px">
+                            <option value="1E-70" selected>1e-70</option>
+                            <option value="1E-50">1e-50</option>
+                            <option value="1E-30">1e-30</option>
+                            <option value="1E-20">1e-20</option>
+                            <option value="1E-15">1e-15</option>
+                            <option value="1E-10">1e-10</option>
+                            <option value="1E-8">1e-8</option>
+                            <option value="1E-6">1e-6</option>
+                            <option value="1E-5">1e-5</option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <select name=format size=1 id="select" style="width:90px">
+                            <option value="OUTC">ChemSage</option>
+                            <option value="OUTB" selected>Extended</option>
+                            <option value="OUTF">FACT</option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <select size=1 name=DIST style="width:40px">
+                            <option value="NODIST" selected>no</option>
+                            <option value="DIST">yes</option>
+                        </select>
+                    </div>
+                </div>
+
+            </div>
+
+            <div>
+                <button > Clear </button>
+                <button> Default </button>
+                <button id="calcul" onclick = "affichage()"> Calculate >>> </button>
+            </div>
+
+        </div>
+
+    
+
+    <div  id="resultat">
+        <center>
+            <img src="loader.gif" id="load" style="visibility:hidden;">
+        </center>
+    </div>
+
+</body>
+</html>
