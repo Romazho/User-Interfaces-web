@@ -1,3 +1,6 @@
+Roman Zhornytskiy 
+Simon Gagné 1897255
+
 
 1) Dans le champ de "Mass" et "Species", il y a plusieurs répétitions des mots "Mass" et "Species", alors on a décidé
 de mentionner ces mots une seule fois et nous avons aligné toutes les masses ensemble et toutes les "Species" ensemble
