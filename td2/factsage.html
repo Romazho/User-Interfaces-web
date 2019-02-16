@@ -53,24 +53,24 @@
             <div>
                 <div>
                     <div>Mass </div>
-                    <input name="mass1" size="10">
+                    <input name="mass1" id="input1" size="10">
                 </div>
                 <div>
                     <div>
                         Mass
                     </div>
-                    <input value="1.5" name="mass2" size="10">
+                    <input value="1.5" name="mass2" id="input2" size="10">
                 </div>
             </div>
 
             <div>
                 <div>
                     <div>Species </div>
-                    <input value="Si" name="Species1" size="10">  +
+                    <input value="Si" name="Species1" id="input3" size="10">  +
                 </div>
                 <div>
                     <div>Species </div>
-                    <input value="O2" name="Species2" size="10">
+                    <input value="O2" name="Species2" id="input4" size="10">
                     <button name="plus" style="height:22px;width:40px"> + </button>
                 </div>
             </div>
@@ -132,9 +132,9 @@
             </div>
 
             <div>
-                <button > Clear </button>
-                <button> Default </button>
-                <button id="calcul" onclick = "affichage()"> Calculate >>> </button>
+                <button onclick="efface()" > Clear </button>
+                <button onclick="normal()"> Default </button>
+                <button id="calcul" onclick="affichage()"> Calculate >>> </button>
             </div>
 
         </div>

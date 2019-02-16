@@ -51,3 +51,16 @@ function affichage() {
 	xmlhttp.send(); //c'est ici qu'on peut envoyer notre donnée
 
 }
+
+function efface() {
+    document.getElementById('input1').value = "";
+    document.getElementById('input2').value = "";
+    document.getElementById('input3').value = "";
+    document.getElementById('input4').value = "";
+}
+
+function normal() {
+    document.getElementById('input2').value = "1.5";
+    document.getElementById('input3').value = "Si";
+    document.getElementById('input4').value = "O2";
+}

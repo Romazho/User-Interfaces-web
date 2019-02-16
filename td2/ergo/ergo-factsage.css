@@ -54,8 +54,8 @@
 
         .container3{
             display: grid;
-            grid-template-columns: auto auto auto auto auto  auto;
-            grid-template-rows: auto;
+            grid-template-columns: auto auto auto auto auto;
+            grid-template-rows: auto auto;
 
             background-color:#f4eda2;
             border: 2px solid black;
@@ -81,7 +81,7 @@
             grid-template-columns: auto auto auto;
             grid-template-rows: auto;
 
-            background-color: #BDB76B;
+            background-color: yellow;
             border: 1px solid black;
             padding: 10px;
 

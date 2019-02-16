@@ -51,36 +51,24 @@
         </div>
 
         <div class="container3">
-            <div class="c31">
-                Mass 
-                <input name="mass1" size="10">
-                Species
-                <input value="Si" name="Species1" size="10">  +
-            </div>
+            
+                <div class="c31"> Mass :</div>
 
-            <div class="c31">
-                Mass
-                <input value="1.5" name="mass1" size="10">
-                Species
-                <input value="O2" name="Species1" size="10">  +
-            </div>
+                <div> <input size="5" id="input1"> </div>
+                <div> <input size="5" value="1.5" id="input2"> </div>
+                <div> <input size="5" id="input3"> </div>
+                <div> <input size="5" id="input4"> </div>
+            
+            
+                <div class="c31"> Species : </div>
 
-            <div class="c31">
-                Mass
-                <input name="mass1" size="10">
-                Species
-                <input name="Species1" size="10">  +
-            </div>
-
-            <div class="c31">
-                Mass
-                <input name="mass1" size="10">
-                Species
-                <input name="Species1" size="10">  = ?
-            </div>
+                <div> <input size="5" value="Si" id="input5"> + </div>
+                <div> <input size="5" value="O2" id="input6"> + </div>
+                <div> <input size="5" id="input7"> + </div>
+                <div> <input size="5" id="input8"> = ? </div>
+            
 
         </div>
-    </div>
 
         <div class="container4">
 
@@ -138,14 +126,14 @@
             </div>
 
             <div>
-                <button > Clear </button>
-                <button> Default </button>
-                <button id="calcul" onclick = "affichage()"> Calculate >>> </button>
+                <button onclick ="efface()" style="background-color:#ff4d4d" > Clear </button>
+                <button onclick ="normal()"> Default </button>
+                <button id="calcul" style="background-color:#8cff66"  onclick = "affichage()"> Calculate >>> </button>
             </div>
 
         </div>
 
-    
+
 
     <div  id="resultat">
         <center>
