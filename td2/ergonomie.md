@@ -1,0 +1,21 @@
+Roman Zhornytskiy 
+Simon Gagné 1897255
+
+
+1) Dans le champ de "Mass" et "Species", il y a plusieurs répétitions des mots "Mass" et "Species", alors on a décidé
+de mentionner ces mots une seule fois et nous avons aligné toutes les masses ensemble et toutes les "Species" ensemble
+pour clarifier l'interface.
+
+2) Le button "+" est ambigu, car on n'est pas sûr de sa signification, ce qui augmente la charge cognitive.
+Alors, on peut donner un mot plus clair à ce button ou on peut l'enlever complètement et de créer plusieurs champs d'input
+de "Mass" et "Species", comme "Equilib-Web".
+
+3) Les deux "grids" jaunes impliquent qu'il y a une corrélation entre les deux, mais si on analyse ces deux "grids",
+on peut s'apercevoir que ce sont deux parties opposées, car la partie d'en haut (avec la température et la pression)
+est l'entrée (input) et la deuxième partie est la sortie (output). Alors, on peut corriger cette situation en changeant la couleur 
+de l'une des deux "grids".
+
+4) Nous avons donné des couleurs différentes aux buttons ("Clear","Default" et "Calculate") pour leur donner un peu plus d'intuition, 
+et cela diminue la charge cognitive.
+
+Nous avons implémenté la 1re, la 2e et la 4e amélioration.

@@ -57,10 +57,15 @@ function efface() {
     document.getElementById('input2').value = "";
     document.getElementById('input3').value = "";
     document.getElementById('input4').value = "";
+    document.getElementById('input5').value = "";
+    document.getElementById('input6').value = "";
+    document.getElementById('input7').value = "";
+    document.getElementById('input8').value = "";
+
 }
 
 function normal() {
     document.getElementById('input2').value = "1.5";
-    document.getElementById('input3').value = "Si";
-    document.getElementById('input4').value = "O2";
+    document.getElementById('input5').value = "Si";
+    document.getElementById('input6').value = "O2";
 }
