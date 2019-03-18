@@ -1,0 +1,90 @@
+
+    
+        /* "bootstrap" pour la division du tableau et pour les couleurs.*/
+        /* "fantawesome" => pour les icones */
+
+    .general{
+        display: grid;
+        /* comment faire pour occuper toute la longuere de la page?? */
+        grid-template-columns: 100%;
+        grid-template-rows: auto;
+        background-color: lightgray;
+
+        padding: 3px;
+        
+        /*grid-row-gap: 5px;*/
+
+        /* border: 1px solid black; */
+        /* margin: 0px; */
+        /*grid-column-gap: 20px; */
+    }
+
+    .container1{
+        display: grid;
+        grid-template-columns: 66% auto;
+        grid-template-rows: auto;
+        background-color: lightgray;
+        padding: 10px;
+    }
+
+        .set-ico-list-item img {
+            position: relative;
+            top: -4px;
+            width: 32px;
+            height: 32px;
+            vertical-align: middle;
+        }
+
+        
+        .user:before {
+            content: "\e008";
+        }
+
+        .bell:before {
+            content: "\e123";
+        }
+
+        .cog1:before {
+            content: "\e019";
+        }
+
+    .container2{
+        display: grid;
+        grid-template-columns:66% auto; /* 66% - 34% */
+        grid-template-rows: auto;
+        background-color: lightblue;
+
+        padding: 10px;
+        color: white;
+        /* grid-column-gap: 50px;  */
+    }
+
+    .con23{
+        display: grid;
+        grid-template-columns:66% auto; /* 66% - 34% */
+        grid-template-rows: auto;
+        background-color: lightblue;
+
+        /* grid-column-gap: 50px;  */
+    }
+
+        .cog2:before {
+            content: "\e019";
+        }
+
+        .glyphicon-plus:before {
+            content: "\002b";
+            
+        }
+
+    .container3{
+        display: grid;
+        grid-template-columns: 66% auto; /* 75% - 34% */
+        grid-template-rows: auto;
+        background-color: white;
+    }
+
+
+        .glyphicon-thumbs-up:before {
+            content: "\e125";
+        }
