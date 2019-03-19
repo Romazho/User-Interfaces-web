@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
-    <!-- on inclue tous les fichiers JavaScript -->
+<!-- on inclue tous les fichiers JavaScript -->
     <script src="main.js"></script>
     <script src="message.js"></script>
     <script src="channel.js"></script>
@@ -29,23 +29,36 @@
 
     <div class="general">
         <div>
-                <div class="container1"> 
+                <div class="container1">
                     <div>
-                        <h1>Icone de Poly Chat</h1>
+                        <h1>
+                            <a href="index.html">
+                                <font color="#ff671B">Poly</font>
+
+                                <font color="0295D3"> Chat </font>
+                            </a>
+                        </h1>
+
                     </div>
 
                     <div align="right">
-                        <!-- les icones, mais faut-t-il faire une image ou un glyphon?? -->
-                        <!-- est-ce que les icones doivent etre exactement identique?? -->
-                        <span class="glyphicon user" aria-hidden="true"></span>
-                        <span class="glyphicon bell" aria-hidden="true"></span>
-                        <img src="glyphicons-basic-417-globe@2x.png" alt="globe">
-                        <span class="glyphicon cog1" aria-hidden="true"></span>
-                        
+            <!-- les icones, mais faut-t-il faire une image ou un glyphon?? -->
+            <!-- est-ce que les icones doivent etre exactement identique?? -->
+                        <a href="#" style="color:black">
+                            <span class="glyphicon user" aria-hidden="true"></span>
+                        </a>
+                        <a href="#" style="color:black">
+                            <span class="glyphicon bell" aria-hidden="true"></span>
+                        </a>
+                            <img src="glyphicons-basic-417-globe@2x.png" alt="globe">
+                        <a href="#" style="color:black">
+                            <span class="glyphicon cog1" aria-hidden="true"></span>
+                        </a>
+
                     </div>
-                    
+
                 </div>
-        
+
 
             <div class="container2">
 
@@ -53,18 +66,22 @@
                     <div>Groupe actif:</div>
                     <h4>Général</h4>
                 </div>
-                
-    <!-- est-ce qu'il faut ajouter la ligne blanche entre les deux clonnes? -->
 
+        <!-- est-ce qu'il faut ajouter la ligne blanche entre les deux clonnes? -->
                 <div >
                     <div> Liste des groupes </div>
                     <div class="con23">
-                        <div> <h4>Groupe disponibles </h4></div>     
-                        <div align="right"> 
-                            <h4>   
-                                <!-- les icones -->            
-                                <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
-                                <span class="glyphicon cog2" aria-hidden="true"></span>
+                        <div> <h4>Groupe disponibles </h4></div>
+                        <div align="right">
+                            <h4>
+                                    <!-- les icones -->
+                                <a href="#" class="plus" style="color:white">
+                                    <span class="glyphicon plus1" aria-hidden="true"></span>
+                                </a>
+
+                                <a href="#" class="cog" style="color:white">
+                                    <span class="glyphicon cog2" aria-hidden="true"></span>
+                                </a>
                             </h4>
                         </div>
                     </div>
@@ -74,16 +91,30 @@
 
             <div class="container3">
                     <div>
-                        <h1>Place pour les messages</h1> 
-                     
+                        <h1>Place pour les messages</h1>
+
                         <div style="position: relative; bottom: 0;">
-                            
-                            <span class="glyphicon glyphicon-thumbs-up" aria-hidden="true"></span>
+                            <button class="like" style="background-color:rgb(95,158,160);">
+                                <span class="glyphicon glyphicon-thumbs-up" aria-hidden="true"></span>
+                            </button>
+                            <!-- est-ce que c'est possible de faire le size de la barre 
+                                varialbe ou en pourcentage?-->
+
+                            <!-- et est-ce que c'est correct comme ca ou "envoyer" n'est pas un button
+                                et il faut faire 3 grides pour la derniere ligne?-->
+                            <input class="EcritureMessage" size="50" placeholder="Votre message ici!">
+                            <button class="envoyer"> 
+                                Envoyer
+                            </button>
                         </div>
                     </div>
-                <div>
-                    *liste des groupes*
-                </div>
+                    <div class="groupes">
+                        *liste des groupes*
+                        <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+                        <span class="glyphicon glyphicon-minus" aria-hidden="true"></span>
+                        <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+
+                    </div>
             </div>
         </div>
     </div>
