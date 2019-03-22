@@ -31,6 +31,8 @@
         <div>
             <div class="container1">
                 <!-- polychat logo -->
+
+                <!-- pas avoir les syles et font dans html-->
                 <div>
                     <a href="index.html">
                         <h1>  <font color="#ff671B">Poly</font>
@@ -41,16 +43,18 @@
 
                 <!-- les icones -->
                 <div class="iconesHaut" align="right">
-                    <a href="#" style="color:black">
-                        <div class="far fa-user"></div>
-                    </a>
-                    <a href="#" style="color:black">
-                        <div class="far fa-bell"></div>
-                    </a>
-                        <div class="fas fa-globe"></div>
-                    <a href="#" style="color:black">
-                        <span class="glyphicon cog1" aria-hidden="true"></span>
-                    </a>
+                    <h4>
+                        <a href="#" style="color:black">
+                            <div class="far fa-user"></div>
+                        </a>
+                        <a href="#" style="color:black">
+                            <div class="far fa-bell"></div>
+                        </a>
+                            <div class="fas fa-globe"></div>
+                        <a href="#" style="color:black">
+                            <span class="glyphicon cog1" aria-hidden="true"></span>
+                        </a>
+                    </h4>
                 </div>
             </div>
 
@@ -70,27 +74,19 @@
                     <!-- second row -->
                     <div class="con231">
                         <div> <h4>Groupe disponibles </h4></div>
-                            <div align="right">
-                                <h4>
-                                        <!-- les icones -->
-                                    <a href="#" class="plus" style="color:white">
-                                        <span class="glyphicon plus1" aria-hidden="true"></span>
-                                    </a>
+                        <div style="word-spacing:7px;" align="right">
+                            <h4>
+                                    <!-- les icones -->
+                                <a href="#" onclick="CreerGroupe()" class="plus">
+                                    <span class="glyphicon plus1"></span>
+                                </a>
+                                
 
-                                    <!--  
-                                    <div id="myModal" class="modal"></div>
-                                    <div class="modal-content">
-                                        <span class="close">&times;</span>
-                                        <h3>Votre nom du groupe</h3>
-                                        <input class="NomGroupe" placeholder="Le nom du groupe ici!">
-                                    </div>
-                                    -->
-
-                                    <a href="#" class="cog" style="color:white">
-                                        <span class="glyphicon cog2" aria-hidden="true"></span>
-                                    </a>
-                                </h4>
-                            </div>
+                                <a href="#" class="cog" style="color:white">
+                                    <span class="glyphicon cog2" aria-hidden="true"></span>
+                                </a>
+                            </h4>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -99,8 +95,20 @@
                    
                 <!-- place pour les messages -->
                 <div class="message">
-                    <h1>Place pour les messages</h1>
+                    <div>
+                        <h1>Place pour les messages</h1>
 
+                        <!-- modal -->
+                        <div id="myModal" class="modal">
+                            <div class="modal-content">
+                                <span class="close">&times;</span>
+                                <h3>Votre nom du groupe</h3>
+                                <input class="NomGroupe" placeholder="Le nom du groupe ici!">
+                            </div>
+                        </div>
+
+                        
+                    </div>
                                 <!-- la place pour l'ecriture -->
                         <div class="bar">
                                 <button class="like" style="background-color:rgb(95,158,160);">
@@ -122,9 +130,9 @@
                 <!-- liste des groupes -->
                 <div class="groupes">
                     *liste des groupes*
-                    <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-                    <span class="glyphicon glyphicon-minus" aria-hidden="true"></span>
-                    <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-minus"></i>
+                    <i class="fas fa-plus"></i>
 
                 </div>
             </div>
