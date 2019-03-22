@@ -24,41 +24,35 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
 
 </head>
-
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
 <body>
-
+  
     <div class="general">
         <div>
-                <div class="container1">
-                    <div>
-                        <h1>
-                            <a href="index.html">
-                                <font color="#ff671B">Poly</font>
-
-                                <font color="0295D3"> Chat </font>
-                            </a>
-                        </h1>
-
-                    </div>
-
-                    <div align="right">
-            <!-- les icones, mais faut-t-il faire une image ou un glyphon?? -->
-            <!-- est-ce que les icones doivent etre exactement identique?? -->
-                        <a href="#" style="color:black">
-                            <span class="glyphicon user" aria-hidden="true"></span>
-                        </a>
-                        <a href="#" style="color:black">
-                            <span class="glyphicon bell" aria-hidden="true"></span>
-                        </a>
-                            <img src="glyphicons-basic-417-globe@2x.png" alt="globe">
-                        <a href="#" style="color:black">
-                            <span class="glyphicon cog1" aria-hidden="true"></span>
-                        </a>
-
-                    </div>
-
+            <div class="container1">
+                <!-- polychat logo -->
+                <div>
+                    <a href="index.html">
+                        <h1>  <font color="#ff671B">Poly</font>
+                        <i style="color:black" class="fas fa-users"></i>
+                        <font color="0295D3"> Chat </font></h1>
+                    </a>
                 </div>
 
+                <!-- les icones -->
+                <div class="iconesHaut" align="right">
+                    <a href="#" style="color:black">
+                        <div class="far fa-user"></div>
+                    </a>
+                    <a href="#" style="color:black">
+                        <div class="far fa-bell"></div>
+                    </a>
+                        <div class="fas fa-globe"></div>
+                    <a href="#" style="color:black">
+                        <span class="glyphicon cog1" aria-hidden="true"></span>
+                    </a>
+                </div>
+            </div>
 
             <div class="container2">
 
@@ -68,54 +62,74 @@
                 </div>
 
         <!-- est-ce qu'il faut ajouter la ligne blanche entre les deux clonnes? -->
-                <div >
-                    <div> Liste des groupes </div>
-                    <div class="con23">
-                        <div> <h4>Groupe disponibles </h4></div>
-                        <div align="right">
-                            <h4>
-                                    <!-- les icones -->
-                                <a href="#" class="plus" style="color:white">
-                                    <span class="glyphicon plus1" aria-hidden="true"></span>
-                                </a>
+                <div class="con23">
 
-                                <a href="#" class="cog" style="color:white">
-                                    <span class="glyphicon cog2" aria-hidden="true"></span>
-                                </a>
-                            </h4>
-                        </div>
+                    <!-- first row -->
+                    <div> Liste des groupes </div>
+
+                    <!-- second row -->
+                    <div class="con231">
+                        <div> <h4>Groupe disponibles </h4></div>
+                            <div align="right">
+                                <h4>
+                                        <!-- les icones -->
+                                    <a href="#" class="plus" style="color:white">
+                                        <span class="glyphicon plus1" aria-hidden="true"></span>
+                                    </a>
+
+                                    <!--  
+                                    <div id="myModal" class="modal"></div>
+                                    <div class="modal-content">
+                                        <span class="close">&times;</span>
+                                        <h3>Votre nom du groupe</h3>
+                                        <input class="NomGroupe" placeholder="Le nom du groupe ici!">
+                                    </div>
+                                    -->
+
+                                    <a href="#" class="cog" style="color:white">
+                                        <span class="glyphicon cog2" aria-hidden="true"></span>
+                                    </a>
+                                </h4>
+                            </div>
                     </div>
                 </div>
-
             </div>
 
             <div class="container3">
-                    <div>
-                        <h1>Place pour les messages</h1>
+                   
+                <!-- place pour les messages -->
+                <div class="message">
+                    <h1>Place pour les messages</h1>
 
-                        <div style="position: relative; bottom: 0;">
-                            <button class="like" style="background-color:rgb(95,158,160);">
-                                <span class="glyphicon glyphicon-thumbs-up" aria-hidden="true"></span>
-                            </button>
-                            <!-- est-ce que c'est possible de faire le size de la barre 
-                                varialbe ou en pourcentage?-->
-
-                            <!-- et est-ce que c'est correct comme ca ou "envoyer" n'est pas un button
-                                et il faut faire 3 grides pour la derniere ligne?-->
-                            <input class="EcritureMessage" size="50" placeholder="Votre message ici!">
-                            <button class="envoyer"> 
-                                Envoyer
-                            </button>
+                                <!-- la place pour l'ecriture -->
+                        <div class="bar">
+                                <button class="like" style="background-color:rgb(95,158,160);">
+                                    <div style="color:white" class="far fa-thumbs-up"></div>
+                                </button>
+                                <!-- est-ce que c'est possible de faire le size de la barre 
+                                    varialbe ou en pourcentage?-->
+    
+                                <!-- et est-ce que c'est correct comme ca ou "envoyer" n'est pas un button
+                                    et il faut faire 3 grides pour la derniere ligne?-->
+                                <input class="EcritureMessage" size="50" placeholder="Votre message ici!">
+                                <button class="envoyer"> 
+                                    Envoyer
+                                </button>
                         </div>
-                    </div>
-                    <div class="groupes">
-                        *liste des groupes*
-                        <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-                        <span class="glyphicon glyphicon-minus" aria-hidden="true"></span>
-                        <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
 
-                    </div>
+                </div>
+
+                <!-- liste des groupes -->
+                <div class="groupes">
+                    *liste des groupes*
+                    <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+                    <span class="glyphicon glyphicon-minus" aria-hidden="true"></span>
+                    <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+
+                </div>
             </div>
+
+
         </div>
     </div>
 
