@@ -6,7 +6,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
-<!-- on inclue tous les fichiers JavaScript -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+
+    <!-- on inclue tous les fichiers JavaScript -->
     <script src="main.js"></script>
     <script src="message.js"></script>
     <script src="channel.js"></script>
@@ -14,30 +18,27 @@
     <script src="messagesObserver.js"></script>
     <script src="connectionHandler.js"></script>
 
-<!-- Latest compiled and minified CSS -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
-
-<!-- jQuery library -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-
-<!-- Latest compiled JavaScript -->
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
 
 </head>
-<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+
 <body>
-  
+
     <div class="general">
         <div>
             <div class="container1">
                 <!-- polychat logo -->
-
                 <!-- pas avoir les syles et font dans html-->
                 <div>
                     <a href="index.html">
-                        <h1>  <font color="#ff671B">Poly</font>
-                        <i style="color:black" class="fas fa-users"></i>
-                        <font color="0295D3"> Chat </font></h1>
+                        <h1>
+                            <font color="#ff671B">Poly</font>
+                            <i style="color:black" class="fas fa-users"></i>
+                            <font color="0295D3"> Chat </font>
+                        </h1>
                     </a>
                 </div>
 
@@ -50,7 +51,7 @@
                         <a href="#" style="color:black">
                             <div class="far fa-bell"></div>
                         </a>
-                            <div class="fas fa-globe"></div>
+                        <div class="fas fa-globe"></div>
                         <a href="#" style="color:black">
                             <span class="glyphicon cog1" aria-hidden="true"></span>
                         </a>
@@ -65,7 +66,7 @@
                     <h4>Général</h4>
                 </div>
 
-        <!-- est-ce qu'il faut ajouter la ligne blanche entre les deux clonnes? -->
+                <!-- est-ce qu'il faut ajouter la ligne blanche entre les deux clonnes? -->
                 <div class="con23">
 
                     <!-- first row -->
@@ -76,11 +77,11 @@
                         <div> <h4>Groupe disponibles </h4></div>
                         <div style="word-spacing:7px;" align="right">
                             <h4>
-                                    <!-- les icones -->
+                                <!-- les icones -->
                                 <a href="#" onclick="CreerGroupe()" class="plus">
                                     <span class="glyphicon plus1"></span>
                                 </a>
-                                
+
 
                                 <a href="#" class="cog" style="color:white">
                                     <span class="glyphicon cog2" aria-hidden="true"></span>
@@ -92,38 +93,37 @@
             </div>
 
             <div class="container3">
-                   
+
                 <!-- place pour les messages -->
                 <div class="message">
                     <div>
+                        <div id="=one"> hiii</div>
                         <h1>Place pour les messages</h1>
-
                         <!-- modal -->
                         <div id="myModal" class="modal">
                             <div class="modal-content">
                                 <span class="close">&times;</span>
-                                <h3>Votre nom du groupe</h3>
+                                <h3>Choisissez le nom du groupe</h3>
                                 <input class="NomGroupe" placeholder="Le nom du groupe ici!">
                             </div>
                         </div>
 
-                        
+
                     </div>
-                                <!-- la place pour l'ecriture -->
-                        <div class="bar">
-                                <button class="like" style="background-color:rgb(95,158,160);">
-                                    <div style="color:white" class="far fa-thumbs-up"></div>
-                                </button>
-                                <!-- est-ce que c'est possible de faire le size de la barre 
-                                    varialbe ou en pourcentage?-->
-    
-                                <!-- et est-ce que c'est correct comme ca ou "envoyer" n'est pas un button
-                                    et il faut faire 3 grides pour la derniere ligne?-->
-                                <input class="EcritureMessage" size="50" placeholder="Votre message ici!">
-                                <button class="envoyer"> 
-                                    Envoyer
-                                </button>
-                        </div>
+                    <!-- la place pour l'ecriture -->
+                    <div class="bar">
+                        <button class="like">
+                            <div class="far fa-thumbs-up"></div>
+                        </button>
+                        <!-- est-ce que c'est possible de faire le size de la barre
+                            varialbe ou en pourcentage?-->
+                        <!-- et est-ce que c'est correct comme ca ou "envoyer" n'est pas un button
+                            et il faut faire 3 grides pour la derniere ligne?-->
+                        <input class="EcritureMessage" placeholder="Votre message ici!">
+                        <button class="envoyer" onclick="myFunction()">
+                            Envoyer
+                        </button>
+                    </div>
 
                 </div>
 
@@ -133,7 +133,6 @@
                     <i class="fas fa-star"></i>
                     <i class="fas fa-minus"></i>
                     <i class="fas fa-plus"></i>
-
                 </div>
             </div>
 

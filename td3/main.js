@@ -1,7 +1,9 @@
 
-
+function  myFunction(){
+    document.getElementById("one").innerHTML = 'oneeeeeeeeeeeeeeeeeeeeeeeeee';
+}
 		// Get the modal
-	var modal = document.getElementById('myModal');
+	/*var modal = document.getElementById('myModal');
 
 	// Get the button that opens the modal
 	var btn = document.getElementById("plus");
@@ -10,7 +12,7 @@
 	var span = document.getElementsByClassName("close")[0];
 
 	// When the user clicks the button, open the modal 
-	btn.onclick = function CreerGroupe() {
+	btn.onclick = function() {
 	modal.style.display = "block";
 	}
 
@@ -25,9 +27,9 @@
 		modal.style.display = "none";
 	}
 
+    */
 
-
-
+/*
 function affichage() {
 
 	xmlhttp.open("POST", "http://localhost:8080", true);
@@ -35,3 +37,4 @@ function affichage() {
 	xmlhttp.send(); //c'est ici qu'on peut envoyer notre donnée
 
 }
+*/
