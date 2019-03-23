@@ -1,0 +1,178 @@
+
+    
+        /* "bootstrap" pour la division du tableau et pour les couleurs.*/
+        /* "fantawesome" => pour les icones */
+
+    .general{
+        display: grid;
+        /* comment faire pour occuper toute la longuere de la page?? */
+        grid-template-columns: 100%;
+        grid-template-rows: auto;
+        background-color: lightgray;
+
+        padding: 3px;
+        
+        /*grid-row-gap: 5px;*/
+
+        /* border: 1px solid black; */
+        /* margin: 0px; */
+        /*grid-column-gap: 20px; */
+    }
+
+    .container1{
+        display: grid;
+        grid-template-columns: 66% auto;
+        grid-template-rows: auto;
+        background-color: rgb(238,238,238);
+        padding: 10px;
+    }
+
+
+    .iconesHaut{
+        word-spacing: 10px;
+        /* border-spacing: 100px; */
+    }
+
+
+        .cog1:before {
+            content: "\e019";
+        }
+
+    .container2{
+        display: grid;
+        grid-template-columns:66% auto; /* 66% - 34% */
+        grid-template-rows: auto;
+        background-color: rgb(95,158,160);
+        
+        /* border:1px solid white; */
+
+        /* padding: 10px; */
+        color: white;
+        /* grid-column-gap: 50px;  */
+    }
+
+    .con22{
+        border-right:1px solid white;
+        padding: 10px;
+    }
+    
+    .con23{
+        display: grid;
+        grid-template-columns:auto; 
+        grid-template-rows: auto auto;
+        padding: 10px;
+        /* grid-column-gap: 50px;  */
+    }
+
+    .con231{
+        display: grid;
+        grid-template-columns:auto auto; 
+        grid-template-rows: auto;
+    }
+
+    
+
+        .cog2:before {
+            content: "\e019";
+        }
+
+        .plus{
+            color:white;
+        }
+
+        .plus1:before {
+            content: "\002b";
+            
+        }
+
+                        /* The Modal (background) */
+            .modal {
+                display: none; /* Hidden by default */
+                position: fixed; /* Stay in place */
+                z-index: 1; /* Sit on top */
+                padding-top: 100px; /* Location of the box */
+                left: 0;
+                top: 0;
+                width: 100%; /* Full width */
+                height: 100%; /* Full height */
+                overflow: auto; /* Enable scroll if needed */
+                background-color: rgb(0,0,0); /* Fallback color */
+                background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+            }
+            
+            /* Modal Content */
+            .modal-content {
+                background-color: #fefefe;
+                margin: auto;
+                padding: 20px;
+                border: 1px solid #888;
+                width: 80%;
+            }
+            
+            /* The Close Button */
+            .close {
+                color: #aaaaaa;
+                float: right;
+                font-size: 28px;
+                font-weight: bold;
+            }
+            
+            .close:hover,
+            .close:focus {
+                color: #000;
+                text-decoration: none;
+                cursor: pointer;
+            }
+
+    .container3{
+        display: grid;
+        grid-template-columns: 66% auto; /* 75% - 34% */
+        grid-template-rows: 500px;
+        background-color: white;
+    }
+
+
+    .message{
+        display: grid;
+        grid-template-columns: auto; /* 75% - 34% */
+        grid-template-rows: 93% auto;
+
+        border-right:1px solid rgb(238,238,238);
+    }
+
+    .bar{
+        display: grid;
+        grid-template-columns: 40px auto 75px; /* 75% - 34% */
+        grid-template-rows: 100%;
+        position: relative;
+        bottom: 10px;
+    }
+
+        .like{
+            background-color:rgb(95,158,160);
+        }
+        .fa-thumbs-up{
+            color:white
+        }
+
+        .envoyer{
+            color:white;
+            background-color:rgb(95,158,160);
+            font-size: 16px;
+        }
+
+        .EcritureMessage{
+            font-size: 16px;
+        }
+
+    .fa-star{
+        color:rgb(255,103,27);
+    }
+
+    .fa-minus {
+        color:rgb(255,103,27);
+    }
+
+    .fa-plus {
+        color:rgb(95,158,160);
+    }

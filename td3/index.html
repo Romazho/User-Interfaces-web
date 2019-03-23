@@ -44,18 +44,27 @@
 
                 <!-- les icones -->
                 <div class="iconesHaut" align="right">
-                    <h4>
+                    <!-- la grandeur des icones est h4 -->
+
                         <a href="#" style="color:black">
-                            <div class="far fa-user"></div>
+                            <div class="utilisateur">
+                                <div class="far fa-user"></div>
+                                <div class="nomUtilisateur"> nom1 </div>
+                            </div>
                         </a>
+
                         <a href="#" style="color:black">
                             <div class="far fa-bell"></div>
                         </a>
-                        <div class="fas fa-globe"></div>
+                        
+                        <a href="#" style="color:black">
+                            <div class="fas fa-globe"></div>
+                        </a>
+
                         <a href="#" style="color:black">
                             <span class="glyphicon cog1" aria-hidden="true"></span>
                         </a>
-                    </h4>
+                    
                 </div>
             </div>
 
@@ -77,9 +86,10 @@
                         <div> <h4>Groupe disponibles </h4></div>
                         <div style="word-spacing:7px;" align="right">
                             <h4>
-                                <!-- les icones -->
-                                <a href="#" onclick="CreerGroupe()" class="plus">
-                                    <span class="glyphicon plus1"></span>
+
+                                <!-- les icones -->         
+                                <a href="#" id="myBtn" onclick="CreerGroupe()" class="plus">
+                                   <span class="glyphicon plus1"></span>
                                 </a>
 
 
@@ -96,15 +106,16 @@
 
                 <!-- place pour les messages -->
                 <div class="message">
-                    <div>
-                        <div id="=one"> hiii</div>
+                    <div class="messageText">
                         <h1>Place pour les messages</h1>
+
                         <!-- modal -->
                         <div id="myModal" class="modal">
                             <div class="modal-content">
-                                <span class="close">&times;</span>
+                                <span class="close" onclick="close()">&times;</span>
                                 <h3>Choisissez le nom du groupe</h3>
                                 <input class="NomGroupe" placeholder="Le nom du groupe ici!">
+                                <button class="ajout" onclick="ajoutGroupe()"> Ajouter </button>
                             </div>
                         </div>
 
@@ -115,12 +126,11 @@
                         <button class="like">
                             <div class="far fa-thumbs-up"></div>
                         </button>
-                        <!-- est-ce que c'est possible de faire le size de la barre
-                            varialbe ou en pourcentage?-->
+
                         <!-- et est-ce que c'est correct comme ca ou "envoyer" n'est pas un button
                             et il faut faire 3 grides pour la derniere ligne?-->
                         <input class="EcritureMessage" placeholder="Votre message ici!">
-                        <button class="envoyer" onclick="myFunction()">
+                        <button class="envoyer" onclick="Envoyer()">
                             Envoyer
                         </button>
                     </div>
@@ -129,9 +139,14 @@
 
                 <!-- liste des groupes -->
                 <div class="groupes">
-                    *liste des groupes*
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-minus"></i>
+                    <div class="grGeneral">
+                        <div class="fas fa-star"> </div>  Général
+                        <div class="defaut"> défaut </div>
+                    </div>
+                    <div class="equipe1">
+                        <i class="fas fa-minus"></i>
+                        équipe 1
+                    </div>
                     <i class="fas fa-plus"></i>
                 </div>
             </div>
@@ -141,4 +156,43 @@
     </div>
 
 </body>
+
+<!-- a trouver comment mettre ca dans main.js -->
+<script>
+
+    // Get the modal
+    var modal = document.getElementById('myModal');
+
+    // Get the button that opens the modal
+    var btn = document.getElementById("myBtn");
+
+    // Get the <span> element that closes the modal
+    var span = document.getElementsByClassName("close")[0];
+
+    // When the user clicks the button, open the modal
+    btn.onclick = function () {
+        modal.style.display = "block";
+    }
+
+    // When the user clicks on <span> (x), close the modal
+    span.onclick = function () {
+        modal.style.display = "none";
+    }
+
+    // When the user clicks on "ajouter", close the modal
+    function ajoutGroupe() {
+        modal.style.display = "none";
+        //envoyer nom du groupe au serveur.
+    }
+
+
+    //When the user clicks anywhere outside of the modal, close it
+    window.onclick = function (event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+    }
+
+</script>
+
 </html>
