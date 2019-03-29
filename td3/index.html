@@ -52,8 +52,8 @@
 
                         <a href="#" style="color:black">
                             <div class="utilisateur">
-                                <div class="far fa-user"></div>
-                                <div class="nomUtilisateur"> nom1 </div>
+                                <div class="far fa-user" onclick="connecter()"></div>
+                                <div id="nom" onclick="connecter()" class="nomUtilisateur"> Cliquez ici </div>
                             </div>
                         </a>
 
@@ -92,10 +92,7 @@
                             <h4>
 
                                 <!-- les icones -->         
-                                <a href="#" id="myBtn" onclick="CreerGroupe()" class="plus">
-                                   <span class="glyphicon plus1"></span>
-                                </a>
-
+                                   <span class="glyphicon plus1" id="myBtn" onclick="CreerGroupe()" ></span>
 
                                 <a href="#" class="cog" style="color:white">
                                     <span class="glyphicon cog2" aria-hidden="true"></span>
@@ -133,8 +130,8 @@
 
                         <!-- et est-ce que c'est correct comme ca ou "envoyer" n'est pas un button
                             et il faut faire 3 grides pour la derniere ligne?-->
-                        <input class="EcritureMessage" placeholder="Votre message ici!">
-                        <button class="envoyer" onclick="Envoyer()">
+                        <input id="ecrirmes" class="EcritureMessage" placeholder="Votre message ici!">
+                        <button class="envoyer" onclick="envoyer()">
                             Envoyer
                         </button>
                     </div>
@@ -147,8 +144,10 @@
                         <div class="fas fa-star"> </div>  Général
                         <div class="defaut"> défaut </div>
                     </div>
-                    <div class="equipe1">
-                        <i class="fas fa-minus"></i>
+                    <div class="equipe1" >
+                             
+                        <i id="eq" onclick="myFunction(this)" class="fas fa-minus" ></i>
+                     
                         équipe 1
                     </div>
                     <i class="fas fa-plus"></i>
@@ -164,6 +163,9 @@
 <!-- a trouver comment mettre ca dans main.js -->
 <script>
 
+
+
+var y = 0;
     // Get the modal
     var modal = document.getElementById('myModal');
 
