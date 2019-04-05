@@ -12,7 +12,7 @@ function envoyer(){
 
 	var mess = "hello";
 	//recevoir le channelId dans le handler?
-	let message = new Message(onMessage,channelId,mess,mess,mess);
+	//let message = new Message(onMessage,channelId,mess,mess,mess);
 
 
 	//on efface ce qui a été écrit a la fin.
