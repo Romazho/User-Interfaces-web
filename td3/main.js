@@ -1,4 +1,46 @@
 
+
+
+    var exampleSocket = new WebSocket("ws://log2420-nginx.info.polymtl.ca"+ 
+    "/chatservice?username="+ "ROman");
+
+
+
+    exampleSocket.onmessage = function (event) {
+        console.log(event.data);
+
+        //var f = document.getElementById("messageText").value;
+        var text = "";
+        var msg = JSON.parse(event.data);
+        var time = new Date(msg.timestamp);
+        var timeStr = time.toLocaleTimeString();
+
+        switch (msg.eventType) {
+            case "onJoinChannel":
+                channelsObserver.ajouterUtilisateur(msg.sender);
+                break;
+            case "onCreateChannel":
+                //channelsObserver.   Ajouter fct pour creer un channel
+                break;
+            case "onLeaveChannel":
+                channelsObserver.retirerUtilisateur(msg.sender);
+                break;
+            case "onMessage":
+                messagesObserver.ajouterMessage(msg);
+                break;
+            case "onError":
+                //messagesObserver.  Ajouter fct pour afficher un erreur
+                break;
+        }
+
+    }
+
+
+
+
+
+
+
 //fonction bonus
 function connecter(){
         var name = prompt("Entrez votre nom", "Roman");
@@ -8,12 +50,19 @@ function connecter(){
     }
 
 
-function envoyer(){
+function envoyerMessage(){
 
-	var mess = "hello";
-	//recevoir le channelId dans le handler?
-	//let message = new Message(onMessage,channelId,mess,mess,mess);
+    var data = "hello";
+    
+    //recevoir le channelId dans le handler?
+    var channelId = "dbf646dc-5006-4d9f-8815-fd37514818ee";
 
+    var nom = document.getElementById("nom").innerHTML ;
+	let message = new Message("onMessage",channelId,data,nom,nom);
+
+    exampleSocket.onopen = function (event) {
+        exampleSocket.send(message); 
+      };
 
 	//on efface ce qui a été écrit a la fin.
 	document.getElementById("ecrirmes").value = " ";
@@ -57,15 +106,6 @@ function changePlusMinus(x){
 	*/
 }
 
-/*
-function affichage() {
-
-	xmlhttp.open("POST", "http://localhost:8080", true);
-	// était: "data-output.json"
-	xmlhttp.send(); //c'est ici qu'on peut envoyer notre donnée
-
-}
-*/
 
 var y = 0;
 
