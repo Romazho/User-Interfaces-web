@@ -1,8 +1,9 @@
 
 
-
+    //connection au server
+    var nom = document.getElementById("nom").innerHTML ;
     var exampleSocket = new WebSocket("ws://log2420-nginx.info.polymtl.ca"+ 
-    "/chatservice?username="+ "ROman");
+    "/chatservice?username="+ nom);
 
 
 
@@ -11,6 +12,7 @@
 
         //var f = document.getElementById("messageText").value;
         var text = "";
+        //msg est un objet
         var msg = JSON.parse(event.data);
         var time = new Date(msg.timestamp);
         var timeStr = time.toLocaleTimeString();
@@ -26,6 +28,7 @@
                 channelsObserver.retirerUtilisateur(msg.sender);
                 break;
             case "onMessage":
+                //messagesObserver
                 messagesObserver.ajouterMessage(msg);
                 break;
             case "onError":
@@ -36,8 +39,11 @@
     }
 
 
-
-
+    //temporaire
+    function ajouterMessage(message) {
+        
+        document.getElementById("testHello").innerHTML = message.data;
+     };
 
 
 
@@ -52,20 +58,23 @@ function connecter(){
 
 function envoyerMessage(){
 
-    var data = "hello";
+    //on prend ce qui a été écrit dans la bar
+    var data = document.getElementById("dataMessage").value;
     
     //recevoir le channelId dans le handler?
     var channelId = "dbf646dc-5006-4d9f-8815-fd37514818ee";
 
-    var nom = document.getElementById("nom").innerHTML ;
-	let message = new Message("onMessage",channelId,data,nom,nom);
+    var nom = document.getElementById("nom").innerHTML ;    //nom = TheMan
 
-    exampleSocket.onopen = function (event) {
-        exampleSocket.send(message); 
-      };
+    //création du message
+    let message = new Message("onMessage",channelId,data,nom,nom);
+    
+    exampleSocket.send(JSON.stringify(message)); 
 
 	//on efface ce qui a été écrit a la fin.
-	document.getElementById("ecrirmes").value = " ";
+    document.getElementById("dataMessage").value = " ";
+    
+
 }
 
 

@@ -1,7 +1,7 @@
 
 //le switch est ici!
 
-Class ConnectionHandler {
+/*Class ConnectionHandler {
 
     constructor();{
 
@@ -14,7 +14,7 @@ Class ConnectionHandler {
     
 
 
-};   
+};   */
 
 
 
