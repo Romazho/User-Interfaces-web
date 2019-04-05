@@ -1,7 +1,26 @@
 
 //le switch est ici!
 
+Class ConnectionHandler {
 
+    constructor();{
+
+        var exampleSocket = new WebSocket("wss://http://log2420-nginx.info.polymtl.ca"+ 
+        "/chatservice?username="+ document.getElementById("nom").innerHTML,"http");
+    };
+
+
+
+    
+
+
+};   
+
+
+
+
+
+{
 /*
 function sendUserMessage(){
     var serverCall = new XMLHttpRequest();
@@ -62,10 +81,19 @@ function sendLeaveMessage(){
     serverCall.open("POST", "http://log2420-nginx.info.polymtl.ca", true);
     serverCall.send();   
 }*/
-var connectionHandler = function () {
-    var username = "hasdka";
+}
 
-    var ws = new WebSocket("ws://log2420-nginx.info.polymtl.ca/chatservice?username=" + username);
+{
+/*
+    var username = "Roman";
+
+    var exampleSocket = new WebSocket("ws://log2420-nginx.info.polymtl.ca/chatservice?username=" + username);
+
+    var msg = JSON.parse(event.data);
+
+    
+    exampleSocket.send("Here's some text that the server is urgently awaiting!"); 
+    document.getElementById("testHello").innerHTML = "succesfull connection";
 
     var log = document.getElementById('chatbox');
 
@@ -77,13 +105,13 @@ var connectionHandler = function () {
 
         switch (msg.eventType) {
             case "onJoinChannel":
-                channelsObserver.ajouterUtilisateur(msg.sender)
+                channelsObserver.ajouterUtilisateur(msg.sender);
                 break;
             case "onCreateChannel":
                 //channelsObserver.   Ajouter fct pour creer un channel
                 break;
             case "onLeaveChannel":
-                channelsObserver.retirerUtilisateur(msg.sender)
+                channelsObserver.retirerUtilisateur(msg.sender);
                 break;
             case "onMessage":
                 messagesObserver.ajouterMessage(msg);
@@ -93,4 +121,5 @@ var connectionHandler = function () {
                 break;
         }
     }
+*/
 }
