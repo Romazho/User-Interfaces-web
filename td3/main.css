@@ -18,7 +18,26 @@
     /* margin: 0px; */
     /*grid-column-gap: 20px; */
 }
+#messageText{
+    padding:20px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    font-family: Helvetica, Arial, sans-serif;
+}
 
+#bubbleme{
+ 
+    display: flex; 
+    float: right;
+    background: #0084ff;
+    color: #fff;
+    max-width: 40%;
+    margin-left: 50%;
+    margin-bottom: 3px;
+    padding: 10px;
+    border-radius: 10px 10px 10px 10px ;
+    
+}
 .container1{
     display: grid;
     grid-template-columns: 66% auto;
@@ -161,12 +180,9 @@
     grid-template-columns: auto; /* 75% - 34% */
     grid-template-rows: 93% auto;
     border-right:1px solid rgb(238,238,238);
-
+    
 }
 
-.messageText{
-    padding:20px;
-}
 
 .bar{
     display: grid;

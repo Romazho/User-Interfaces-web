@@ -150,3 +150,11 @@ var y = 0;
             modal.style.display = "none";
         }
     }
+
+function displayMessage() {
+    var message = document.createElement("div");
+    message.id = "bubbleme";
+    message.innerHTML = "testFuckerfdfgl;sdjfglksdfj;gslkdfjgs;dlfgjaksdjhfaskdfhaskdjfhaskdjfhakdjfhaskdjfhaskdjfhasdkjfhasdfkjahsdkfjahsdfaskdfhasdkfahsdkfjahsdkfjas";
+    document.getElementById("messageText").appendChild(message);
+    document.getElementById("messageText").scrollBy(0,5000);
+}
