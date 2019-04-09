@@ -25,9 +25,8 @@
     font-family: Helvetica, Arial, sans-serif;
 }
 
-#bubbleme{
- 
-    display: flex; 
+#bubbleme {
+    display: inline-block;
     float: right;
     background: #0084ff;
     color: #fff;
@@ -35,8 +34,8 @@
     margin-left: 50%;
     margin-bottom: 3px;
     padding: 10px;
-    border-radius: 10px 10px 10px 10px ;
-    
+    border-radius: 10px 10px 10px 10px;
+    overflow-wrap: break-word;
 }
 .container1{
     display: grid;
@@ -69,6 +68,11 @@
         grid-template-columns: auto;
         grid-template-rows: auto auto;
         text-align: center;
+    }
+
+    .personne{
+        color: black;
+        margin-left: 80%;
     }
 
     .fa-user{
@@ -175,12 +179,12 @@
 }
 
 
-.message{
+.message {
     display: grid;
     grid-template-columns: auto; /* 75% - 34% */
     grid-template-rows: 93% auto;
-    border-right:1px solid rgb(238,238,238);
-    
+    border-right: 1px solid rgb(238,238,238);
+
 }
 
 
