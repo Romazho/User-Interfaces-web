@@ -18,11 +18,6 @@ function connecter(){
         }
     }
 
-
-
-
-
-
 function envoyerMessage(){
 
     //on prend ce qui a été écrit dans la bar
@@ -44,6 +39,14 @@ function envoyerMessage(){
     
 
 }
+
+var input = document.getElementById("dataMessage");
+input.addEventListener("keyup", function (event) {
+    if (event.keyCode === 13) {
+        event.preventDefault();
+        document.getElementById("envoyerEnter").click();
+    }
+});
 
 
 function changePlusMinus(x){
