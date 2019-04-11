@@ -1,4 +1,68 @@
 
+exampleSocket.onmessage = function (event) {
+    console.log(event.data);
+
+    //var f = document.getElementById("messageText").value;
+    var text = "";
+    //msg est un objet
+    var msg = JSON.parse(event.data);
+    var time = new Date(msg.timestamp);
+    var timeStr = time.toLocaleTimeString();
+
+    switch (msg.eventType) {
+        case "onJoinChannel":
+            channelsObserver.ajouterUtilisateur(msg.sender);
+            break;
+        case "onCreateChannel":
+            //channelsObserver.   Ajouter fct pour creer un channel
+            break;
+        case "onLeaveChannel":
+            channelsObserver.retirerUtilisateur(msg.sender);
+            break;
+        case "onMessage":
+            //a faire ceci : mais ca ne marche pas...
+            //ajouterMessage(msg); 
+            ajouterMessage(msg);
+            break;
+        case "onError":
+            //messagesObserver.  Ajouter fct pour afficher un erreur
+            break;
+    }
+
+}
+
+
+//temporaire
+function ajouterMessage(message) {
+
+    var sender = document.getElementById("nom").innerHTML;
+
+    if (message.sender == "TheMan" ) {
+        var messageBox = document.createElement("div");
+        messageBox.id = "messageNous";
+        messageBox.innerHTML = message.data;
+        document.getElementById("messageText").appendChild(messageBox);
+        document.getElementById("messageText").scrollBy(0, 5000);
+
+    }
+    else {
+
+        var messageBox = document.createElement("div");
+        messageBox.id = "messageFromOthers";
+        messageBox.innerHTML = message.data;
+        document.getElementById("messageText").appendChild(messageBox);
+        document.getElementById("messageText").scrollBy(0, 5000);
+
+    }
+
+
+};
+
+
+
+
+
+
 //le switch est ici!
 
 /*Class ConnectionHandler {

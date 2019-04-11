@@ -14,7 +14,7 @@ class Message {
      * @param {string} sender - The sender name.
      * @param {Date} timestamp - The timestamp of the message.
      */
-    
+    //sendre = null
     constructor(eventType, channelId, data, sender, timestamp) {
         this.eventType = eventType;
         this.channelId = channelId;

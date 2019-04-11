@@ -25,7 +25,7 @@
     font-family: Helvetica, Arial, sans-serif;
 }
 
-#bubbleme {
+#messageNous {
     display: inline-block;
     float: right;
     background: #0084ff;
@@ -37,6 +37,20 @@
     border-radius: 10px 10px 10px 10px;
     overflow-wrap: break-word;
 }
+
+#messageFromOthers {
+    display: inline-block;
+    float: right;
+    background: rgb(241,240,240);
+    color: black;
+    max-width: 40%;
+    margin-left: 50%;
+    margin-bottom: 3px;
+    padding: 10px;
+    border-radius: 10px 10px 10px 10px;
+    overflow-wrap: break-word;
+}
+
 .container1{
     display: grid;
     grid-template-columns: 66% auto;

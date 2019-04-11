@@ -7,43 +7,6 @@
 
 
 
-    exampleSocket.onmessage = function (event) {
-        console.log(event.data);
-
-        //var f = document.getElementById("messageText").value;
-        var text = "";
-        //msg est un objet
-        var msg = JSON.parse(event.data);
-        var time = new Date(msg.timestamp);
-        var timeStr = time.toLocaleTimeString();
-
-        switch (msg.eventType) {
-            case "onJoinChannel":
-                channelsObserver.ajouterUtilisateur(msg.sender);
-                break;
-            case "onCreateChannel":
-                //channelsObserver.   Ajouter fct pour creer un channel
-                break;
-            case "onLeaveChannel":
-                channelsObserver.retirerUtilisateur(msg.sender);
-                break;
-            case "onMessage":
-                //messagesObserver
-                messagesObserver.ajouterMessage(msg);
-                break;
-            case "onError":
-                //messagesObserver.  Ajouter fct pour afficher un erreur
-                break;
-        }
-
-    }
-
-
-    //temporaire
-    function ajouterMessage(message) {
-        
-        document.getElementById("testHello").innerHTML = message.data;
-     };
 
 
 
@@ -54,6 +17,10 @@ function connecter(){
             document.getElementById("nom").innerHTML = name;
         }
     }
+
+
+
+
 
 
 function envoyerMessage(){
@@ -68,7 +35,8 @@ function envoyerMessage(){
 
     //création du message
     let message = new Message("onMessage",channelId,data,nom,nom);
-    
+
+    //envoie du message
     exampleSocket.send(JSON.stringify(message)); 
 
 	//on efface ce qui a été écrit a la fin.

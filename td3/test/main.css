@@ -1,178 +1,283 @@
 
     
-        /* "bootstrap" pour la division du tableau et pour les couleurs.*/
-        /* "fantawesome" => pour les icones */
+    /* "bootstrap" pour la division du tableau et pour les couleurs.*/
+    /* "fantawesome" => pour les icones */
 
-    .general{
-        display: grid;
-        /* comment faire pour occuper toute la longuere de la page?? */
-        grid-template-columns: 100%;
-        grid-template-rows: auto;
-        background-color: lightgray;
-
-        padding: 3px;
+.general{
+    display: grid;
+    /* comment faire pour occuper toute la longuere de la page?? */
+    grid-template-columns: auto;
+    grid-template-rows: auto;
+    background-color: lightgray;
+    height: 100%;
+    padding: 3px;
         
-        /*grid-row-gap: 5px;*/
+    /*grid-row-gap: 5px;*/
 
-        /* border: 1px solid black; */
-        /* margin: 0px; */
-        /*grid-column-gap: 20px; */
-    }
+    /* border: 1px solid black; */
+    /* margin: 0px; */
+    /*grid-column-gap: 20px; */
+}
+#messageText{
+    padding:20px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    font-family: Helvetica, Arial, sans-serif;
+}
 
-    .container1{
+#messageNous {
+    display: inline-block;
+    float: right;
+    background: #0084ff;
+    color: #fff;
+    max-width: 40%;
+    margin-left: 50%;
+    margin-bottom: 3px;
+    padding: 10px;
+    border-radius: 10px 10px 10px 10px;
+    overflow-wrap: break-word;
+}
+
+#messageFromOthers {
+    display: inline-block;
+    float: right;
+    background: rgb(241,240,240);
+    color: black;
+    max-width: 40%;
+    margin-left: 50%;
+    margin-bottom: 3px;
+    padding: 10px;
+    border-radius: 10px 10px 10px 10px;
+    overflow-wrap: break-word;
+}
+
+.container1{
+    display: grid;
+    grid-template-columns: 66% auto;
+    grid-template-rows: auto;
+    background-color: rgb(238,238,238);
+    padding: 10px;
+    align-items: center;
+    padding-left:20px;
+    padding-right:20px;
+}
+
+
+.iconesHaut {
+    /*margin-left: auto;*/
+    position: relative;
+
+
+    word-spacing: 15px;
+    display: grid;
+    grid-template-columns: 55% 15% 15% 15%;
+    grid-template-rows: auto;
+    /* border-spacing: 100px; */
+    text-align: right;
+    font-size: 20px;
+}
+
+    .utilisateur{
         display: grid;
-        grid-template-columns: 66% auto;
-        grid-template-rows: auto;
-        background-color: rgb(238,238,238);
-        padding: 10px;
-    }
-
-
-    .iconesHaut{
-        word-spacing: 10px;
-        /* border-spacing: 100px; */
-    }
-
-
-        .cog1:before {
-            content: "\e019";
-        }
-
-    .container2{
-        display: grid;
-        grid-template-columns:66% auto; /* 66% - 34% */
-        grid-template-rows: auto;
-        background-color: rgb(95,158,160);
-        
-        /* border:1px solid white; */
-
-        /* padding: 10px; */
-        color: white;
-        /* grid-column-gap: 50px;  */
-    }
-
-    .con22{
-        border-right:1px solid white;
-        padding: 10px;
-    }
-    
-    .con23{
-        display: grid;
-        grid-template-columns:auto; 
+        grid-template-columns: auto;
         grid-template-rows: auto auto;
-        padding: 10px;
-        /* grid-column-gap: 50px;  */
+        text-align: center;
     }
 
-    .con231{
-        display: grid;
-        grid-template-columns:auto auto; 
-        grid-template-rows: auto;
+    .personne{
+        color: black;
+        margin-left: 80%;
     }
+
+    .fa-user{
+
+    }
+
+    .nomUtilisateur{
+        color:rgb(34,135,21);
+
+    }
+
+    .cog1:before {
+        content: "\e019";
+    }
+
+.container2{
+    display: grid;
+    grid-template-columns:66% auto; /* 66% - 34% */
+    grid-template-rows: auto;
+    background-color: rgb(95,158,160);
+        
+    /* border:1px solid white; */
+
+    /* padding: 10px; */
+    color: white;
+    /* grid-column-gap: 50px;  */
+}
+
+.con22{
+    border-right:1px solid white;
+    padding: 10px;
+}
+    
+.con23{
+    display: grid;
+    grid-template-columns:auto; 
+    grid-template-rows: auto auto;
+    padding: 10px;
+    /* grid-column-gap: 50px;  */
+}
+
+.con231{
+    display: grid;
+    grid-template-columns:auto auto; 
+    grid-template-rows: auto;
+    align-items: center;
+}
 
     
 
-        .cog2:before {
-            content: "\e019";
-        }
+    .cog2:before {
+        content: "\e019";
+    }
 
-        .plus{
-            color:white;
-        }
 
-        .plus1:before {
-            content: "\002b";
+    .plus1:before {
+        content: "\002b";
+        cursor: pointer;
+    }
+
+                    /* The Modal (background) */
+        .modal {
+            display: none; /* Hidden by default */
+            position: fixed; /* Stay in place */
+            z-index: 1; /* Sit on top */
+            padding-top: 10px; /* Location of the box */
+            width: 100%; /* Full width */
+            height: 100%; /* Full height */
+            overflow: auto; /* Enable scroll if needed */
+            background-color: rgb(0,0,0); /* Fallback color */
+            background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+        }
             
+        /* Modal Content */
+        .modal-content {
+            background-color: #fefefe;
+            margin: auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
         }
-
-                        /* The Modal (background) */
-            .modal {
-                display: none; /* Hidden by default */
-                position: fixed; /* Stay in place */
-                z-index: 1; /* Sit on top */
-                padding-top: 100px; /* Location of the box */
-                left: 0;
-                top: 0;
-                width: 100%; /* Full width */
-                height: 100%; /* Full height */
-                overflow: auto; /* Enable scroll if needed */
-                background-color: rgb(0,0,0); /* Fallback color */
-                background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
-            }
             
-            /* Modal Content */
-            .modal-content {
-                background-color: #fefefe;
-                margin: auto;
-                padding: 20px;
-                border: 1px solid #888;
-                width: 80%;
-            }
+        /* The Close Button */
+        .close {
+            color: #aaaaaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
             
-            /* The Close Button */
-            .close {
-                color: #aaaaaa;
-                float: right;
-                font-size: 28px;
-                font-weight: bold;
-            }
-            
-            .close:hover,
-            .close:focus {
-                color: #000;
-                text-decoration: none;
-                cursor: pointer;
-            }
-
-    .container3{
-        display: grid;
-        grid-template-columns: 66% auto; /* 75% - 34% */
-        grid-template-rows: 500px;
-        background-color: white;
-    }
-
-
-    .message{
-        display: grid;
-        grid-template-columns: auto; /* 75% - 34% */
-        grid-template-rows: 93% auto;
-
-        border-right:1px solid rgb(238,238,238);
-    }
-
-    .bar{
-        display: grid;
-        grid-template-columns: 40px auto 75px; /* 75% - 34% */
-        grid-template-rows: 100%;
-        position: relative;
-        bottom: 10px;
-    }
-
-        .like{
-            background-color:rgb(95,158,160);
-        }
-        .fa-thumbs-up{
-            color:white
+        .close:hover,
+        .close:focus {
+            color: #000;
+            text-decoration: none;
+            cursor: pointer;
         }
 
-        .envoyer{
-            color:white;
-            background-color:rgb(95,158,160);
-            font-size: 16px;
-        }
+.container3{
+    display: grid;
+    grid-template-columns: 66% auto; /* 75% - 34% */
+    grid-template-rows: 100%;
+    background-color: white;
+    height: 85%;
+}
 
-        .EcritureMessage{
-            font-size: 16px;
-        }
 
-    .fa-star{
-        color:rgb(255,103,27);
+.message {
+    display: grid;
+    grid-template-columns: auto; /* 75% - 34% */
+    grid-template-rows: 93% auto;
+    border-right: 1px solid rgb(238,238,238);
+
+}
+
+
+.bar{
+    display: grid;
+    grid-template-columns: 40px auto 75px; /* 75% - 34% */
+    grid-template-rows: 70%;
+    position: relative;
+    bottom: 10px;
+}
+
+    .like{
+        background-color:rgb(95,158,160);
+    }
+    .fa-thumbs-up{
+        color:white
     }
 
-    .fa-minus {
-        color:rgb(255,103,27);
+    .envoyer{
+        color:white;
+        background-color:rgb(95,158,160);
+        font-size: 16px;
     }
 
-    .fa-plus {
-        color:rgb(95,158,160);
+    .EcritureMessage{
+        font-size: 16px;
     }
+
+.fa-star{
+    color:rgb(255,103,27);
+}
+
+ .fa-minus {
+    color:rgb(255,103,27);
+    cursor: pointer;
+}
+
+.fa-plus {
+    color:rgb(95,158,160);
+    cursor: pointer;
+} 
+
+.groupes{
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: 40px 40px 40px 40px; /*4 rows max for now...*/
+    padding:20px;
+    padding-top:40px;
+}
+
+.grGeneral{
+    align-items: center;
+    display: grid;
+    grid-template-columns: 35px 70px 60px;
+    grid-template-rows: auto;
+    background-color: rgb(249,249,249);
+    padding: 5px;
+    padding-left: 25px;
+    font-weight: bold;
+    color:rgb(51,123,183);
+}
+
+.defaut{
+
+    font-weight: bold;
+    color:rgb(9,153,213);
+    background-color:white;
+    border-radius: 25px;
+    border: 1px solid rgb(84,184,225);
+    text-align:center;
+}
+
+.equipe1{
+    display: grid;
+    grid-template-columns: 35px 70px;
+    grid-template-rows: auto;
+    background-color: rgb(238,238,238);
+    align-items: center;
+    color:rgb(51,123,183);
+    padding-left: 25px;
+    font-weight: bold;
+}
