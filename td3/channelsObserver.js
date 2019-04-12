@@ -16,7 +16,7 @@ class ChannelsObserver {
         //faire une boucle qui ajoute tous les groupes
         //message.data
         if(this.created == 0){
-            for(var i=1;i< message.data.length;i++){
+            for(var i=2;i< message.data.length;i++){
                 this.ajouterGroupe(message.data[i]);
             }
             this.created++;
@@ -39,7 +39,7 @@ class ChannelsObserver {
         i.classList.add("fa-plus");
         i.id = channel.id
 
-       i.addEventListener("click", this.changePlusMinus);
+        i.addEventListener("click", this.changePlusMinus);
         //est-ce qu'on peut faire .class??
        
         if(this.iteration % 2 == 0 ){
@@ -83,6 +83,8 @@ class ChannelsObserver {
 changePlusMinus(x){
 
 //x.classList.toggle("fa-plus");
+    /*let nom = chanel.id;
+    let x = document.getElementById(nom);*/
 
 	//a changer cette implementation...
 	if(this.y % 2 == 0){
