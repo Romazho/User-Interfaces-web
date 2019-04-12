@@ -1,11 +1,26 @@
+var exampleSocket;
 
-
+$(document).ready(function(){
     //connection au server
     var nom = document.getElementById("nom").innerHTML ;
-    var exampleSocket = new WebSocket("ws://log2420-nginx.info.polymtl.ca"+ 
+    exampleSocket = new WebSocket("ws://log2420-nginx.info.polymtl.ca"+ 
     "/chatservice?username="+ nom);
 
+    // 1 . Create une instance de l'observable
+    let connectionHandler = new ConnectionHandler(exampleSocket);
 
+    // 2. Creer une instance des observer
+    let messageObserver = new MessagesObserver();
+    let channelObserver = new ChannelsObserver();
+
+    // 3. Subscribe, .. 
+    connectionHandler.subscribeMessageEvent(messageObserver);
+    connectionHandler.subscribeChannelEvent(channelObserver);
+
+    connectionHandler.init();
+
+
+});
 
 
 
@@ -49,20 +64,21 @@ input.addEventListener("keyup", function (event) {
 });
 
 
+var y = 0;
+
 function changePlusMinus(x){
 
 //x.classList.toggle("fa-plus");
 
-
 	//a changer cette implementation...
 	if(y % 2 == 0){
-		x.classList.remove("fa-minus");
-		x.classList.add("fa-plus");
+		x.classList.remove("fa-plus");
+		x.classList.add("fa-minus");
 	}
 	
 	else {
-		x.classList.remove("fa-plus");
-		x.classList.add("fa-minus");
+		x.classList.remove("fa-minus");
+		x.classList.add("fa-plus");
 	}
 
 	y++;
@@ -87,7 +103,7 @@ function changePlusMinus(x){
 }
 
 
-var y = 0;
+
 
     // Get the modal
     var modal = document.getElementById('myModal');

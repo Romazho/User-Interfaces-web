@@ -85,6 +85,16 @@
     overflow-wrap: break-word;
 }
 
+#erreur{
+    display: inline-block;
+    float: left;
+    background: red;
+    color: black;
+    max-width: 40%;
+    margin-bottom: 3px;
+    padding: 10px;
+    overflow-wrap: break-word;
+}
 
 .container1 {
     display: grid;
@@ -305,9 +315,10 @@
     text-align:center;
 }
 
+
 .equipe1{
     display: grid;
-    grid-template-columns: 35px 70px;
+    grid-template-columns: 35px 70px 70px;
     grid-template-rows: auto;
     background-color: rgb(238,238,238);
     align-items: center;
