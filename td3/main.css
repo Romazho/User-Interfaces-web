@@ -113,7 +113,23 @@
     padding-right: 20px;
 }
 
+#logo {
+    display: grid;
+    grid-template-columns: 92px 57px 94px;
+    grid-template-rows: auto;
+    text-align: center;
+    font-size: 40px;
+}
 
+#poly {
+    color : #ff671B;
+}
+#chat {
+    color :#0295D3;
+}
+#users {
+    color: black;
+}
 
 .iconesHaut {
     /*margin-left: auto;*/
