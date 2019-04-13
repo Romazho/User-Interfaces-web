@@ -18,10 +18,10 @@ class MessagesObserver {
 
     //temporaire car il faut faire messageObserver.ajouterMessage(msg)
     ajouterMessage(message) {
-
+        
         var sender = document.getElementById("nom").innerHTML;
 
-        if (message.sender == "TheMan" ) {
+        if (message.sender == sender ) {
             var messageBox = document.createElement("div");
             messageBox.id = "messageNous";
             messageBox.innerHTML = message.data;
@@ -38,7 +38,7 @@ class MessagesObserver {
             document.getElementById("messageText").appendChild(dateBox);
         }
         else {
-
+            playSound("appointed");
             //affichage du nom
             var name = document.createElement("div");
             name.id = "nomOther";
@@ -58,14 +58,13 @@ class MessagesObserver {
             //var date = message.timestamp;
 
             let stringDate = this.afficherDate(message);
-
             dateBox.innerHTML = stringDate;
             document.getElementById("messageText").appendChild(dateBox);
         }
 
     }
 
-
+    
     afficherDate(message) {
 
         var date = new Date(message.timestamp);

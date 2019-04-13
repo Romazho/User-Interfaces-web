@@ -1,7 +1,14 @@
 var exampleSocket;
 
 $(document).ready(function(){
-    //connection au server
+   
+    initialisation();
+
+
+});
+
+function initialisation(){
+     //connection au server
     var nom = document.getElementById("nom").innerHTML ;
     exampleSocket = new WebSocket("ws://log2420-nginx.info.polymtl.ca"+ 
     "/chatservice?username="+ nom);
@@ -18,23 +25,20 @@ $(document).ready(function(){
     connectionHandler.subscribeChannelEvent(channelObserver);
 
     connectionHandler.init();
-
-
-});
-
-
+}
 
 
 //fonction bonus
 function connecter(){
-        var name = prompt("Entrez votre nom", "Roman");
+        var name = prompt("Entrez votre nom");
+        document.getElementById("nom").innerHTML = name;
         if (name != null) {
-            document.getElementById("nom").innerHTML = name;
+           initialisation();
         }
     }
 
 function envoyerMessage(){
-
+    
     //on prend ce qui a été écrit dans la bar
     var data = document.getElementById("dataMessage").value;
     
@@ -54,6 +58,26 @@ function envoyerMessage(){
     
 
 }
+function envoyerMessagePouce(){
+    var data = "👍";
+    var channelId = "dbf646dc-5006-4d9f-8815-fd37514818ee";
+
+    var nom = document.getElementById("nom").innerHTML ;    //nom = TheMan
+
+    //création du message
+    let message = new Message("onMessage",channelId,data,nom,nom);
+
+    //envoie du message
+    exampleSocket.send(JSON.stringify(message));
+
+}  
+
+function playSound(filename){
+    var mp3Source = '<source src="' + filename + '.mp3" type="audio/mpeg">';
+    var oggSource = '<source src="' + filename + '.ogg" type="audio/ogg">';
+    var embedSource = '<embed hidden="true" autostart="true" loop="false" src="' + filename +'.mp3">';
+    document.getElementById("sound").innerHTML='<audio autoplay="autoplay">' + mp3Source + oggSource + embedSource + '</audio>';
+  }
 
 var input = document.getElementById("dataMessage");
 input.addEventListener("keyup", function (event) {

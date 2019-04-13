@@ -33,7 +33,7 @@
     float: right;
     background: #0084ff;
     color: #fff;
-    max-width: 40%;
+    max-width: 50%;
     margin-left: 50%;
     margin-bottom: 3px;
     padding: 10px;
@@ -41,12 +41,14 @@
     overflow-wrap: break-word;
 }
 
+
 #messageFromOthers {
     display: inline-block;
     float: left;
     background: rgb(241,240,240);
     color: black;
-    max-width: 40%;
+    max-width: 50%;
+    margin-right: 50%;
     margin-bottom: 3px;
     padding: 10px;
     border-radius: 10px 10px 10px 10px;
@@ -57,7 +59,8 @@
     display: inline-block;
     float: left;
     color: gray;
-    max-width: 40%;
+    max-width: 50%;
+    margin-right: 50%;
     margin-bottom: 3px;
     padding: 10px;
     overflow-wrap: break-word;
@@ -67,8 +70,9 @@
 #date {
     display: inline-block;
     float: right;
-    color: black;
-    max-width: 40%;
+    color: #8c8c8c;
+    font-size: 12;
+    max-width: 50%;
     margin-left: 50%;
     margin-bottom: 3px;
     padding: 10px;
@@ -78,8 +82,10 @@
 #dateOther {
     display: inline-block;
     float: left;
-    color: black;
-    max-width: 40%;
+    color: #8c8c8c;
+    font-size: 12;
+    max-width: 50%;
+    margin-right: 50%;
     margin-bottom: 3px;
     padding: 10px;
     overflow-wrap: break-word;
