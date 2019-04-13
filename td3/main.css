@@ -168,7 +168,7 @@
         content: "\e019";
     }
 
-.container2{
+#container2{
     display: grid;
     grid-template-columns:66% auto; /* 66% - 34% */
     grid-template-rows: auto;
@@ -181,7 +181,7 @@
     /* grid-column-gap: 50px;  */
 }
 
-.con22{
+#con22{
     border-right:1px solid white;
     padding: 10px;
 }
@@ -325,6 +325,7 @@
     padding-left: 25px;
     font-weight: bold;
     color:rgb(51,123,183);
+    cursor:pointer;
 }
 
 .defaut{
@@ -338,13 +339,14 @@
 }
 
 
-.equipe1{
+.equipe1 {
     display: grid;
     grid-template-columns: 35px 95px 70px;
     grid-template-rows: auto;
     background-color: rgb(238,238,238);
     align-items: center;
-    color:rgb(51,123,183);
+    color: rgb(51,123,183);
     padding-left: 25px;
     font-weight: bold;
+    cursor: pointer;
 }

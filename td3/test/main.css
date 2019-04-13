@@ -33,7 +33,7 @@
     float: right;
     background: #0084ff;
     color: #fff;
-    max-width: 40%;
+    max-width: 50%;
     margin-left: 50%;
     margin-bottom: 3px;
     padding: 10px;
@@ -41,12 +41,14 @@
     overflow-wrap: break-word;
 }
 
+
 #messageFromOthers {
     display: inline-block;
     float: left;
     background: rgb(241,240,240);
     color: black;
-    max-width: 40%;
+    max-width: 50%;
+    margin-right: 50%;
     margin-bottom: 3px;
     padding: 10px;
     border-radius: 10px 10px 10px 10px;
@@ -57,7 +59,8 @@
     display: inline-block;
     float: left;
     color: gray;
-    max-width: 40%;
+    max-width: 50%;
+    margin-right: 50%;
     margin-bottom: 3px;
     padding: 10px;
     overflow-wrap: break-word;
@@ -67,8 +70,9 @@
 #date {
     display: inline-block;
     float: right;
-    color: black;
-    max-width: 40%;
+    color: #8c8c8c;
+    font-size: 12;
+    max-width: 50%;
     margin-left: 50%;
     margin-bottom: 3px;
     padding: 10px;
@@ -78,13 +82,25 @@
 #dateOther {
     display: inline-block;
     float: left;
+    color: #8c8c8c;
+    font-size: 12;
+    max-width: 50%;
+    margin-right: 50%;
+    margin-bottom: 3px;
+    padding: 10px;
+    overflow-wrap: break-word;
+}
+
+#erreur{
+    display: inline-block;
+    float: left;
+    background: red;
     color: black;
     max-width: 40%;
     margin-bottom: 3px;
     padding: 10px;
     overflow-wrap: break-word;
 }
-
 
 .container1 {
     display: grid;
@@ -97,7 +113,23 @@
     padding-right: 20px;
 }
 
+#logo {
+    display: grid;
+    grid-template-columns: 92px 57px 94px;
+    grid-template-rows: auto;
+    text-align: center;
+    font-size: 40px;
+}
 
+#poly {
+    color : #ff671B;
+}
+#chat {
+    color :#0295D3;
+}
+#users {
+    color: black;
+}
 
 .iconesHaut {
     /*margin-left: auto;*/
@@ -286,7 +318,7 @@
 .grGeneral{
     align-items: center;
     display: grid;
-    grid-template-columns: 35px 70px 60px;
+    grid-template-columns: 35px 79px 60px;
     grid-template-rows: auto;
     background-color: rgb(249,249,249);
     padding: 5px;
@@ -305,9 +337,10 @@
     text-align:center;
 }
 
+
 .equipe1{
     display: grid;
-    grid-template-columns: 35px 70px;
+    grid-template-columns: 35px 95px 70px;
     grid-template-rows: auto;
     background-color: rgb(238,238,238);
     align-items: center;

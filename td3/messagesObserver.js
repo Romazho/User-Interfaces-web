@@ -13,15 +13,11 @@ class MessagesObserver {
          this.data = data;
      }
 
-
-
-
-    //temporaire car il faut faire messageObserver.ajouterMessage(msg)
     ajouterMessage(message) {
         
         var sender = document.getElementById("nom").innerHTML;
 
-        if (message.sender == sender ) {
+        if (message.sender == sender) {
             var messageBox = document.createElement("div");
             messageBox.id = "messageNous";
             messageBox.innerHTML = message.data;
@@ -37,6 +33,7 @@ class MessagesObserver {
             dateBox.innerHTML = stringDate;
             document.getElementById("messageText").appendChild(dateBox);
         }
+
         else {
             playSound("appointed");
             //affichage du nom

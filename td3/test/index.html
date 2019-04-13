@@ -32,14 +32,22 @@
             <div class="container1">
                 <!-- polychat logo -->
                 <!-- pas avoir les syles et font dans html-->
-                <div>
+                <div id="logo">
                     <a href="index.html">
-                        <h1>
-                            <font color="#ff671B">Poly</font>
-                            <i style="color:black" class="fas fa-users"></i>
-                            <font color="0295D3"> Chat </font>
-                        </h1>
-                    </a>
+                        <div id="poly">
+                            Poly
+                        </div>
+                        </a>
+                        <div id="users">
+                            <a href="index.html">
+                                <i  class="fas fa-users"></i>
+                            </a>
+                        </div>
+                        <a href="index.html">
+                            <div id="chat">
+                                 Chat 
+                            </div>
+                        </a>
                 </div>
 
                 <!-- les icones -->
@@ -49,7 +57,7 @@
                         <a href="#"  class="personne">
                             <div class="utilisateur">
                                 <div class="far fa-user" onclick="connecter()"></div>
-                                <div id="nom" onclick="connecter()" class="nomUtilisateur">TheWoman </div>
+                                <div id="nom" onclick="connecter()" class="nomUtilisateur">User</div>
                             </div>
                         </a>
 
@@ -88,7 +96,7 @@
                             <h4>
 
                                 <!-- les icones -->         
-                                   <span class="glyphicon plus1" id="myBtn" onclick="CreerGroupe()" ></span>
+                                   <span class="glyphicon plus1" id="myBtn" onclick="envoyerGroupe()" ></span>
 
                                 <a href="#" class="cog" style="color:white">
                                     <span class="glyphicon cog2" aria-hidden="true"></span>
@@ -98,9 +106,9 @@
                     </div>
                 </div>
             </div>
-
+            <div id="sound"></div>
             <div class="container3">
-
+            
                 <!-- place pour les messages -->
                 <div class="message">
                     <div id="messageText">
@@ -111,8 +119,8 @@
                             <div class="modal-content">
                                 <span class="close" onclick="close()">&times;</span>
                                 <h3>Choisissez le nom du groupe</h3>
-                                <input class="NomGroupe" placeholder="Le nom du groupe ici!">
-                                <button class="ajout" onclick="ajoutGroupe()"> Ajouter </button>
+                                <input id="NomGroupe" placeholder="Le nom du groupe ici!" value="test">
+                                <button class="ajout" onclick="envoyerGroupe()"> Ajouter </button>
                             </div>
                         </div>
 
@@ -121,12 +129,12 @@
                     <!-- la place pour l'ecriture -->
                     <div class="bar">
                         <button class="like">
-                            <div class="far fa-thumbs-up"></div>
+                            <div class="far fa-thumbs-up" onclick="envoyerMessagePouce()"></div>
                         </button>
 
                         <!-- et est-ce que c'est correct comme ca ou "envoyer" n'est pas un button
                             et il faut faire 3 grides pour la derniere ligne?-->
-                        <input id="dataMessage" class="EcritureMessage" placeholder="Votre message ici!">
+                        <input autofocus="autofocus" id="dataMessage" class="EcritureMessage" placeholder="Votre message ici!">
                         <button id="envoyerEnter" class="envoyer" onclick="envoyerMessage()">
                             Envoyer
                         </button>
@@ -135,18 +143,25 @@
                 </div>
 
                 <!-- liste des groupes -->
-                <div class="groupes">
+                <div class="groupes" id="groupe">
                     <div class="grGeneral">
                         <div class="fas fa-star"> </div>  Général
                         <div class="defaut"> défaut </div>
                     </div>
-                    <div class="equipe1" >
-                             
-                        <i id="eq" onclick="changePlusMinus(this)" class="fas fa-minus" ></i>
-                     
+                    <div class="equipe1">
+
+                        <i id="eq" onclick="changePlusMinus(this)" class="fas fa-plus"></i>
+
                         équipe 1
                     </div>
-                    <i class="fas fa-plus"></i>
+                    <!-- <div class="grGeneral">
+
+        <i id="eq" onclick="changePlusMinus(this)" class="fas fa-plus" ></i>
+
+        équipe 2
+    </div>
+
+    <!-- <i class="fas fa-plus"></i> -->
                 </div>
             </div>
 

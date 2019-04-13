@@ -76,11 +76,11 @@
                 </div>
             </div>
 
-            <div class="container2">
+            <div id="container2">
 
-                <div class="con22">
+                <div id="con22">
                     <div>Groupe actif:</div>
-                    <h4>Général</h4>
+                    
                 </div>
 
                 <!-- est-ce qu'il faut ajouter la ligne blanche entre les deux clonnes? -->
@@ -96,7 +96,7 @@
                             <h4>
 
                                 <!-- les icones -->         
-                                   <span class="glyphicon plus1" id="myBtn" onclick="CreerGroupe()" ></span>
+                                   <span class="glyphicon plus1" id="myBtn" onclick="envoyerGroupe()" ></span>
 
                                 <a href="#" class="cog" style="color:white">
                                     <span class="glyphicon cog2" aria-hidden="true"></span>
@@ -119,8 +119,8 @@
                             <div class="modal-content">
                                 <span class="close" onclick="close()">&times;</span>
                                 <h3>Choisissez le nom du groupe</h3>
-                                <input class="NomGroupe" placeholder="Le nom du groupe ici!">
-                                <button class="ajout" onclick="ajoutGroupe()"> Ajouter </button>
+                                <input id="NomGroupe" placeholder="Le nom du groupe ici!" value="test">
+                                <button class="ajout" onclick="envoyerGroupe()"> Ajouter </button>
                             </div>
                         </div>
 
@@ -148,12 +148,12 @@
                         <div class="fas fa-star"> </div>  Général
                         <div class="defaut"> défaut </div>
                     </div>
-                    <div class="equipe1">
+                    <!--<div class="equipe1">
 
-                        <i id="eq" onclick="changePlusMinus(this)" class="fas fa-plus"></i>
+                        <i id="eq" onclick="changeStatus(this)" class="fas fa-plus"></i>
 
                         équipe 1
-                    </div>
+                    </div>-->
                     <!-- <div class="grGeneral">
 
         <i id="eq" onclick="changePlusMinus(this)" class="fas fa-plus" ></i>

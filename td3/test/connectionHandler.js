@@ -1,124 +1,72 @@
 
-exampleSocket.onmessage = function (event) {
-    console.log(event.data);
 
-    //var f = document.getElementById("messageText").value;
-    var text = "";
-    //msg est un objet
-    var msg = JSON.parse(event.data);
-    var time = new Date(msg.timestamp);
-    var timeStr = time.toLocaleTimeString();
+class ConnectionHandler {
 
-    switch (msg.eventType) {
-        case "onJoinChannel":
-            channelsObserver.ajouterUtilisateur(msg.sender);
-            break;
-        case "onCreateChannel":
-            //channelsObserver.   Ajouter fct pour creer un channel
-            break;
-        case "onLeaveChannel":
-            channelsObserver.retirerUtilisateur(msg.sender);
-            break;
-        case "onMessage":
-            //a faire ceci : mais ca ne marche pas...
-            //ajouterMessage(msg); 
-            ajouterMessage(msg);
-            break;
-        case "onError":
-            //messagesObserver.  Ajouter fct pour afficher un erreur
-            break;
+    constructor(socket){
+        this.MessagesObserver  = undefined;
+        this.ChannelsObserver  = undefined;
+        this.socket = socket;
     }
+
+    
+
+    subscribeMessageEvent(messageObserver){
+        this.MessagesObserver = messageObserver;
+        
+    }
+
+    subscribeChannelEvent(channelsObserver){
+        this.ChannelsObserver = channelsObserver;
+    }
+
+    init(){
+
+        this.socket.onmessage = (event) =>{
+            console.log(event.data);
+        
+            //var f = document.getElementById("messageText").value;
+            var text = "";
+            //msg est un objet
+            var msg = JSON.parse(event.data);
+            console.log(msg.data);
+            
+            var time = new Date(msg.timestamp);
+            var timeStr = time.toLocaleTimeString();
+        
+            switch (msg.eventType) {
+                case "updateChannelsList":      //presque finit
+                    this.ChannelsObserver.updateChannelList(msg);
+                    break;
+                case "onJoinChannel":           //à faire
+                    this.ChannelsObserver.ajouterUtilisateur(msg.sender);
+                    break;
+                case "onCreateChannel":         //à faire
+                    this.ChannelsObserver.ajouterGroupe(mdg.data);
+                    break;
+                case "onLeaveChannel":          //à faire
+                    this.ChannelsObserver.retirerUtilisateur(msg.sender);
+                    break;
+                case "onMessage":
+                    this.MessagesObserver.ajouterMessage(msg);      //fait
+                    break;
+                case "onError":
+                    //messagesObserver.  Ajouter fct pour afficher un erreur
+                    this.MessagesObserver.afficherErreur();         //fait
+                    break;
+            }
+        
+        }
+    }
+
 
 }
 
 
-//temporaire car il faut faire messageObserver.ajouterMessage(msg)
-function ajouterMessage(message) {
-
-    var sender = document.getElementById("nom").innerHTML;
-
-    if (message.sender == "TheWoman" ) {
-        var messageBox = document.createElement("div");
-        messageBox.id = "messageNous";
-        messageBox.innerHTML = message.data;
-        document.getElementById("messageText").appendChild(messageBox);
-        document.getElementById("messageText").scrollBy(0, 5000);
-
-        //affichage du temps
-        var dateBox = document.createElement("div");
-        dateBox.id = "date";
-
-        stringDate = afficherDate(message);
-
-        dateBox.innerHTML = stringDate;
-        document.getElementById("messageText").appendChild(dateBox);
-    }
-    else {
-
-        //affichage du nom
-        var name = document.createElement("div");
-        name.id = "nomOther";
-        name.innerHTML = message.sender;
-        document.getElementById("messageText").appendChild(name);
-
-        var messageBox = document.createElement("div");
-        messageBox.id = "messageFromOthers";
-        messageBox.innerHTML = message.data;
-        document.getElementById("messageText").appendChild(messageBox);
-        document.getElementById("messageText").scrollBy(0, 5000);
 
 
-        //affichage du temps
-        var dateBox = document.createElement("div");
-        dateBox.id = "dateOther";
-        //var date = message.timestamp;
-
-        stringDate = afficherDate(message);
-
-        dateBox.innerHTML = stringDate;
-        document.getElementById("messageText").appendChild(dateBox);
-    }
 
 
-};
 
-
-function afficherDate(message) {
-
-    var date = new Date(message.timestamp);
-
-    var stringDate = "";
-
-    switch (date.getDay()) {
-        case 0:
-            stringDate = "DIMANCHE";
-            break;
-        case 1:
-            stringDate = "LUNDI";
-            break;
-        case 2:
-            stringDate = "MARDI";
-            break;
-        case 3:
-            stringDate = "MERCREDI";
-            break;
-        case 4:
-            stringDate = "JEUDI";
-            break;
-        case 5:
-            stringDate = "VENDREDI";
-            break;
-        case 6:
-            stringDate = "SAMEDI";
-            break;
-
-    }
-
-    var month = date.getMonth() + 1;
-    stringDate += " " + month + ", " + date.getHours() + ":" + date.getMinutes();
-
-    return stringDate;
-}
 
 
 

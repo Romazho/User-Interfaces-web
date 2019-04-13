@@ -2,10 +2,10 @@
 
 class ConnectionHandler {
 
-    constructor(exampleSocket){
+    constructor(socket){
         this.MessagesObserver  = undefined;
         this.ChannelsObserver  = undefined;
-        this.exampleSocket = exampleSocket;
+        this.socket = socket;
     }
 
     
@@ -21,7 +21,7 @@ class ConnectionHandler {
 
     init(){
 
-        this.exampleSocket.onmessage = (event) =>{
+        this.socket.onmessage = (event) =>{
             console.log(event.data);
         
             //var f = document.getElementById("messageText").value;
@@ -34,26 +34,24 @@ class ConnectionHandler {
             var timeStr = time.toLocaleTimeString();
         
             switch (msg.eventType) {
-                case "updateChannelsList":
+                case "updateChannelsList":      //presque finit
                     this.ChannelsObserver.updateChannelList(msg);
                     break;
-                case "onJoinChannel":
-                    this.ChannelsObserver.ajouterUtilisateur(msg.sender);
+                case "onJoinChannel":           //va jamais entrer ici!!!!!!!!!!!!!!!!!!!!!!!
+                    this.ChannelsObserver.changePlusMinus(msg.channelId);
                     break;
-                case "onCreateChannel":
-                    //channelsObserver.   Ajouter fct pour creer un channel
+                case "onCreateChannel":         //à faire
+                    this.ChannelsObserver.ajouterGroupe(msg.data);
                     break;
-                case "onLeaveChannel":
+                case "onLeaveChannel":          //à faire //va jamais entrer ici!!!!!!!!!!!!!!!!!!!!!!!
                     this.ChannelsObserver.retirerUtilisateur(msg.sender);
                     break;
                 case "onMessage":
-                    //a faire ceci : mais ca ne marche pas...
-                    //ajouterMessage(msg); 
-                    this.MessagesObserver.ajouterMessage(msg);
+                    this.MessagesObserver.ajouterMessage(msg);      //fait
                     break;
                 case "onError":
                     //messagesObserver.  Ajouter fct pour afficher un erreur
-                    this.MessagesObserver.afficherErreur();
+                    this.MessagesObserver.afficherErreur();         //fait
                     break;
             }
         
