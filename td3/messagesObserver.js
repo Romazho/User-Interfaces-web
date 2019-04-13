@@ -14,51 +14,58 @@ class MessagesObserver {
      }
 
     ajouterMessage(message) {
-        
-        var sender = document.getElementById("nom").innerHTML;
 
-        if (message.sender == sender) {
-            var messageBox = document.createElement("div");
-            messageBox.id = "messageNous";
-            messageBox.innerHTML = message.data;
-            document.getElementById("messageText").appendChild(messageBox);
-            document.getElementById("messageText").scrollBy(0, 5000);
+        var container = document.getElementById("con22");
+        var current = container.childNodes[1];
 
-            //affichage du temps
-            var dateBox = document.createElement("div");
-            dateBox.id = "date";
+        console.log(message.channelId);
+        console.log(current.id);
 
-            let stringDate = this.afficherDate(message);
+        if (message.channelId == current.id ) {
+            var sender = document.getElementById("nom").innerHTML;
 
-            dateBox.innerHTML = stringDate;
-            document.getElementById("messageText").appendChild(dateBox);
+            if (message.sender == sender) {
+                var messageBox = document.createElement("div");
+                messageBox.id = "messageNous";
+                messageBox.innerHTML = message.data;
+                document.getElementById("messageText").appendChild(messageBox);
+                document.getElementById("messageText").scrollBy(0, 5000);
+
+                //affichage du temps
+                var dateBox = document.createElement("div");
+                dateBox.id = "date";
+
+                let stringDate = this.afficherDate(message);
+
+                dateBox.innerHTML = stringDate;
+                document.getElementById("messageText").appendChild(dateBox);
+            }
+
+            else {
+                playSound("appointed");
+                //affichage du nom
+                var name = document.createElement("div");
+                name.id = "nomOther";
+                name.innerHTML = message.sender;
+                document.getElementById("messageText").appendChild(name);
+
+                var messageBox = document.createElement("div");
+                messageBox.id = "messageFromOthers";
+                messageBox.innerHTML = message.data;
+                document.getElementById("messageText").appendChild(messageBox);
+                document.getElementById("messageText").scrollBy(0, 5000);
+
+
+                //affichage du temps
+                var dateBox = document.createElement("div");
+                dateBox.id = "dateOther";
+                //var date = message.timestamp;
+
+                let stringDate = this.afficherDate(message);
+                dateBox.innerHTML = stringDate;
+                document.getElementById("messageText").appendChild(dateBox);
+            }
         }
-
-        else {
-            playSound("appointed");
-            //affichage du nom
-            var name = document.createElement("div");
-            name.id = "nomOther";
-            name.innerHTML = message.sender;
-            document.getElementById("messageText").appendChild(name);
-
-            var messageBox = document.createElement("div");
-            messageBox.id = "messageFromOthers";
-            messageBox.innerHTML = message.data;
-            document.getElementById("messageText").appendChild(messageBox);
-            document.getElementById("messageText").scrollBy(0, 5000);
-
-
-            //affichage du temps
-            var dateBox = document.createElement("div");
-            dateBox.id = "dateOther";
-            //var date = message.timestamp;
-
-            let stringDate = this.afficherDate(message);
-            dateBox.innerHTML = stringDate;
-            document.getElementById("messageText").appendChild(dateBox);
-        }
-
     }
 
     

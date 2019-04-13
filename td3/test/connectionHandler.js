@@ -37,13 +37,13 @@ class ConnectionHandler {
                 case "updateChannelsList":      //presque finit
                     this.ChannelsObserver.updateChannelList(msg);
                     break;
-                case "onJoinChannel":           //à faire
-                    this.ChannelsObserver.ajouterUtilisateur(msg.sender);
+                case "onJoinChannel":           //va jamais entrer ici!!!!!!!!!!!!!!!!!!!!!!!
+                    this.ChannelsObserver.changePlusMinus(msg.channelId);
                     break;
                 case "onCreateChannel":         //à faire
-                    this.ChannelsObserver.ajouterGroupe(mdg.data);
+                    this.ChannelsObserver.ajouterGroupe(msg.data);
                     break;
-                case "onLeaveChannel":          //à faire
+                case "onLeaveChannel":          //à faire //va jamais entrer ici!!!!!!!!!!!!!!!!!!!!!!!
                     this.ChannelsObserver.retirerUtilisateur(msg.sender);
                     break;
                 case "onMessage":

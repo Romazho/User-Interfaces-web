@@ -3,8 +3,6 @@ var socket;
 $(document).ready(function(){
    
     initialisation();
-
-
 });
 
 function initialisation(){
@@ -25,6 +23,12 @@ function initialisation(){
     connectionHandler.subscribeChannelEvent(channelObserver);
 
     connectionHandler.init();
+
+    var activeGroup = document.createElement("h4");
+    activeGroup.innerHTML = "General";
+    activeGroup.id = "dbf646dc-5006-4d9f-8815-fd37514818ee";
+    var parent = document.getElementById("con22");
+    parent.appendChild(activeGroup);
 }
 
 
@@ -60,7 +64,6 @@ function envoyerMessage(){
 
 }
 
-
 function envoyerGroupe() {
 
     var nom = prompt("Entrez le nom du groupe");
@@ -71,7 +74,7 @@ function envoyerGroupe() {
 
     //on crée un nouveau channel
     var channel = new Message("onCreateChannel", id, nom, nom, nom);
-    console.log(nom);
+    //console.log(nom);
 
     //envoie du message
     socket.send(JSON.stringify(channel)); 
@@ -149,3 +152,70 @@ function displayMessage() {
         }
     }
     */
+
+function envoyerRequeteJoin(x) {
+    //on prend ce qui a été écrit dans la bar
+
+    var id = x.id;
+
+    var data = x.innerHTML;
+
+    //création du message
+
+    let request = new Message("onJoinChannel", id, data, data, data);
+
+    //envoie du message
+    socket.send(JSON.stringify(request));
+
+}
+
+function changeStatus(elem){
+    if (elem.classList.contains("fa-plus"))
+        envoyerRequeteJoin(elem);
+    else {
+        envoyerRequestLeave(elem);
+    }
+}
+
+function envoyerRequestLeave(x) {
+    //on prend ce qui a été écrit dans la bar
+
+    var id = x.id;
+
+    var data = x.innerHTML;
+
+    //création du message
+
+    let request = new Message("onLeaveChannel", id, data, data, data);
+
+    //envoie du message
+    socket.send(JSON.stringify(request));
+
+}
+
+function changerGroupe(elem) {
+
+    document.getElementById("con22").innerHTML = "";
+
+    document.getElementById("con22").innerHTML += "<div>Groupe actif:</div>";
+
+    var activeGroup = document.createElement("h4");
+    activeGroup.innerHTML = elem.innerHTML;
+    activeGroup.id = elem.id;
+    var parent = document.getElementById("con22");
+    parent.appendChild(activeGroup);
+}
+
+
+function changerGroupeGeneral(elem) {
+
+    document.getElementById("con22").innerHTML = "";
+
+    document.getElementById("con22").innerHTML += "<div>Groupe actif:</div>";
+
+    var activeGroup = document.createElement("h4");
+    activeGroup.innerHTML = "General";
+    activeGroup.id = elem.id;
+    var parent = document.getElementById("con22");
+    parent.appendChild(activeGroup);
+}

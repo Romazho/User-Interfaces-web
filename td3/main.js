@@ -3,8 +3,6 @@ var socket;
 $(document).ready(function(){
    
     initialisation();
-
-
 });
 
 function initialisation(){
@@ -25,6 +23,11 @@ function initialisation(){
     connectionHandler.subscribeChannelEvent(channelObserver);
 
     connectionHandler.init();
+
+
+    document.getElementById("con22").innerHTML = "";
+
+    document.getElementById("con22").innerHTML += "<div>Groupe actif:</div>";
 
     var activeGroup = document.createElement("h4");
     activeGroup.innerHTML = "General";
@@ -76,7 +79,7 @@ function envoyerGroupe() {
 
     //on crée un nouveau channel
     var channel = new Message("onCreateChannel", id, nom, nom, nom);
-    console.log(nom);
+    //console.log(nom);
 
     //envoie du message
     socket.send(JSON.stringify(channel)); 
@@ -203,6 +206,20 @@ function changerGroupe(elem) {
 
     var activeGroup = document.createElement("h4");
     activeGroup.innerHTML = elem.innerHTML;
+    activeGroup.id = elem.id;
+    var parent = document.getElementById("con22");
+    parent.appendChild(activeGroup);
+}
+
+
+function changerGroupeGeneral(elem) {
+
+    document.getElementById("con22").innerHTML = "";
+
+    document.getElementById("con22").innerHTML += "<div>Groupe actif:</div>";
+
+    var activeGroup = document.createElement("h4");
+    activeGroup.innerHTML = "General";
     activeGroup.id = elem.id;
     var parent = document.getElementById("con22");
     parent.appendChild(activeGroup);

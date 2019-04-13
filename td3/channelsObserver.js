@@ -34,7 +34,8 @@ class ChannelsObserver {
         //var defaut = document.createElement("div");
         //defaut.className = "defaut";
         //defaut.innerHTML = "défaut";
-        general.setAttribute("onclick", "changerGroupe(this)");
+        general.setAttribute("onclick", "changerGroupeGeneral(this)");
+
         general.innerHTML += "<div class='fas fa-star'> </div>  General <div class='defaut'> defaut </div>";
 
         this.iteration = 0;
