@@ -5,6 +5,7 @@ $(document).ready(function(){
     initialisation();
 });
 
+/** cette fonction initialise les objets et elle genere un div dans un conteneur */
 function initialisation(){
      //connection au server
     var nom = document.getElementById("nom").innerHTML ;
@@ -39,6 +40,7 @@ function initialisation(){
 
 var compteurNotification = 0; 
 
+/** Cette fonction est responsalbe d'afficher les notifications*/
 function updateCompteur() {
     var cloche = document.getElementById("cloche");
 
@@ -54,12 +56,15 @@ function updateCompteur() {
     }
 }
 
+/** Cette fonction est responssable de mettre le compteurNotification à zéro */
 function resetCompteur() {
     compteurNotification = 0; 
     updateCompteur();
 }
 
-//fonction bonus
+
+/** fonction bonus: Cette fonction est responssalbe de changer le nom de l'utilisateur
+ * en créeant un nouveau websocket avec la fonction initialisation()*/
 function connecter(){
         var name = prompt("Entrez votre nom");
         document.getElementById("nom").innerHTML = name;
@@ -68,19 +73,17 @@ function connecter(){
         }
     }
 
-//cette fonction doit recevoir un chanelID pour envoyer le message dans le bon channel.
+
+/** Cette fonction est responssable d'envoyer un message au serveur*/
 function envoyerMessage(){
     
     //on prend ce qui a été écrit dans la bar
     var data = document.getElementById("dataMessage").value;
-    
-    //recevoir le channelId dans le handler?
-    //var channelId = "dbf646dc-5006-4d9f-8815-fd37514818ee";
 
     var container = document.getElementById("con22");
     var current = container.childNodes[1];
 
-    var nom = document.getElementById("nom").innerHTML ;    //nom = TheMan
+    var nom = document.getElementById("nom").innerHTML ;
 
     //création du message
     let message = new Message("onMessage",current.id,data,nom,nom);
@@ -93,23 +96,23 @@ function envoyerMessage(){
    
 }
 
+/** Cette fonction est responssable d'envoyer un groupe au serveur*/
 function envoyerGroupe() {
 
     var nom = prompt("Entrez le nom du groupe");
 
     //on recupere le nom du groupe
-    //var nom = document.getElementById("NomGroupe").innerHTML;
     var id = "dbf646dc-5006-4d9f-8815-fd37514818ee";
 
     //on crée un nouveau channel
     var channel = new Message("onCreateChannel", id, nom, nom, nom);
-    //console.log(nom);
 
     //envoie du message
     socket.send(JSON.stringify(channel)); 
 
 }
 
+/** Cette fonction est responssable d'envoyer un message sous la forme d'une pouce*/
 function envoyerMessagePouce(){
     var data = "👍";
     var channelId = "dbf646dc-5006-4d9f-8815-fd37514818ee";
@@ -124,6 +127,9 @@ function envoyerMessagePouce(){
 
 }  
 
+/** Cette fonction est responssable d'envoyer du son
+  @param {string} filename : -le nom
+ */
 function playSound(filename){
     var mp3Source = '<source src="' + filename + '.mp3" type="audio/mpeg">';
     var oggSource = '<source src="' + filename + '.ogg" type="audio/ogg">';
@@ -139,18 +145,6 @@ input.addEventListener("keyup", function (event) {
     }
 });
 
-
-
-
-/*
-function displayMessage() {
-    var message = document.createElement("div");
-    message.id = "bubbleme";
-    message.innerHTML = "fdfgl;sdjfglksdfj;gslkdfjgs;dlfgjaksdjhfaskdfhaskdjfhaskdjfhakdjfhaskdjfhaskdjfhasdkjfhasdfkjahsdkfjahsdfaskdfhasdkfahsdkfjahsdkfjas";
-    document.getElementById("messageText").appendChild(message);
-    document.getElementById("messageText").scrollBy(0,5000);
-}
-*/
 
 
 function envoyerRequeteJoin(x) {
