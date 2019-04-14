@@ -296,8 +296,8 @@
     display: grid;
     grid-template-columns: 40px auto 75px; /* 75% - 34% */
     grid-template-rows: 70%;
-    position: relative;
-    bottom: 10px;
+    position:relative;
+    bottom: 0px;
 }
 
     .like{
