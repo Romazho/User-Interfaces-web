@@ -14,8 +14,8 @@ class MessagesObserver {
      }
 
 
-    /** Cette fonction est responssable d'ajouter
-     @param {HTMLElement} message - l'icone généré
+    /** Cette fonction est responssable d'ajouter un message quand le serveur confirme l'envoie du message
+     @param {Objet} message - le message recu du serveur
      */
     ajouterMessage(message) {
 
@@ -75,7 +75,9 @@ class MessagesObserver {
         }
     }
 
-    
+      /** Cette fonction est responssable d'ajouter la date au message
+     @param {Objet} message - le message recu du serveur
+     */
     afficherDate(message) {
 
         var date = new Date(message.timestamp);
@@ -113,7 +115,7 @@ class MessagesObserver {
         return stringDate;
     }
 
-
+     /** Cette fonction est responssable d'ajouter un message d'erreur lorsqu'on detecte l'evenement "onError" */
     afficherErreur(){
 
         var errorBox = document.createElement("div");
@@ -125,6 +127,9 @@ class MessagesObserver {
 
     }
 
+    /** Cette fonction est responssable d'afficher les messages qui sont déjà presents dans le groupe 
+     *      @param {Objet} data - le message recu du serveur
+     */
     afficherHistorique(data) {
 
         for (var i = 0; i < data.messages.length; i++) {

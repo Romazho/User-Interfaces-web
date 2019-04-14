@@ -26,7 +26,6 @@ class ConnectionHandler {
         
             var text = "";
             var msg = JSON.parse(event.data);
-            console.log(msg);
             console.log(msg.data);
             
             var time = new Date(msg.timestamp);
