@@ -2,14 +2,17 @@
 
 class ChannelsObserver {
 
-    //a voire
-
+    /** Cette fonction est responssable de construir l'objet ChannelsObserver
+     */
     constructor() {
         this.iteration = 0;
         this.y=0;
     }
 
-    
+
+    /** Cette fonction efface et met à jour l'ensemble des channels du user
+     @param {Message} channels - message contenant l'ensemble des channels
+     */
     updateChannelList(channels){
 
        
@@ -51,6 +54,9 @@ class ChannelsObserver {
        
     }
     
+    /** Cette fonction est responssable d'ajouter un nouveau channel
+     @param {Message} channel - message contenant le nouveau channel
+     */
     ajouterGroupe(channel){
     
         var groupeBox = document.createElement("div");
@@ -97,7 +103,11 @@ class ChannelsObserver {
     }
 
 
-changePlusMinus(bool) {
+
+/** Cette fonction est responssable de modifier le bouton +/- selon son état courant
+     @param {Boolean} bool - boolean déterminant l'état courant du bouton
+     */
+    changePlusMinus(bool) {
 
         var x = document.getElementById(id);
 
@@ -111,12 +121,9 @@ changePlusMinus(bool) {
         }
 
 
-        //x.classList.toggle("fa-plus");
+        
 
-}
-
-
-   
+    }
 
 
 }
