@@ -13,6 +13,10 @@ class MessagesObserver {
          this.data = data;
      }
 
+
+    /** Cette fonction est responssable d'ajouter
+     @param {HTMLElement} message - l'icone généré
+     */
     ajouterMessage(message) {
 
         compteurNotification++;
