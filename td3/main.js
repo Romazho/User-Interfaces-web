@@ -128,7 +128,7 @@ function envoyerMessagePouce(){
 }  
 
 /** Cette fonction est responssable d'envoyer du son
-  @param {string} filename : -le nom
+  @param {string} filename : -le nom du fichier
  */
 function playSound(filename){
     var mp3Source = '<source src="' + filename + '.mp3" type="audio/mpeg">';
@@ -137,7 +137,9 @@ function playSound(filename){
     document.getElementById("sound").innerHTML='<audio autoplay="autoplay">' + mp3Source + oggSource + embedSource + '</audio>';
   }
 
+
 var input = document.getElementById("dataMessage");
+/** Cette fonction est responssable d'envoyer un message avec le button "Entrée"*/
 input.addEventListener("keyup", function (event) {
     if (event.keyCode === 13) {
         event.preventDefault();
@@ -147,19 +149,20 @@ input.addEventListener("keyup", function (event) {
 
 
 
-function envoyerRequeteJoin(x) {
-    //on prend ce qui a été écrit dans la bar
+/** Cette fonction est responssable d'envoyer une requete "onJoinChannel" au serveur
+ @param {HTMLElement} element - l'icone généré
+ */
+function envoyerRequeteJoin(element) {
 
-    x.classList.add("fa-minus");
+    element.classList.add("fa-minus");
 
     changerGroupe(x);    
 
-    var id = x.id;
+    var id = element.id;
 
-    var data = x.innerHTML;
+    var data = element.innerHTML;
 
     //création du message
-
     let request = new Message("onJoinChannel", id, data, data, data);
 
     //envoie du message
@@ -167,22 +170,28 @@ function envoyerRequeteJoin(x) {
 
 }
 
-function changeStatus(elem) {
+/** Cette fonction est responssable de choisir quelle fonction il faut appeller
+ @param {HTMLElement} element - l'icone généré
+ */
+function changeStatus(element) {
 
-        if (elem.classList.contains("fa-plus"))
-            envoyerRequeteJoin(elem);
-        else {
-            envoyerRequestLeave(elem);
+    if (element.classList.contains("fa-plus"))
+        envoyerRequeteJoin(element);
+    else {
+        envoyerRequestLeave(element);
         }
     
 }
 
-function envoyerRequestLeave(x) {
+/** Cette fonction est responssable d'envoyer une requete "onLeaveChannel" au serveur
+ @param {HTMLElement} element - l'icone généré
+ */
+function envoyerRequestLeave(element) {
     //on prend ce qui a été écrit dans la bar
 
-    var id = x.id;
+    var id = element.id;
 
-    var data = x.innerHTML;
+    var data = element.innerHTML;
 
     //création du message
 
@@ -191,18 +200,21 @@ function envoyerRequestLeave(x) {
     //envoie du message
     socket.send(JSON.stringify(request));
 
-    changerGroupeGeneral(x);          
+    changerGroupeGeneral(element);          
 }
 
-function changerGroupe(elem) {
+/** Cette fonction est responssable de changer le nom du groupe afficher sous l'onglet "Groupe actif"
+ @param {HTMLElement} element - l'icone généré
+ */
+function changerGroupe(element) {
 
-    var parent = elem.parentElement;
+    var parent = element.parentElement;
     var icone = parent.firstChild;
     var channel = parent.childNodes[1];
 
     //var ok = document.getElementById("con22");
     //var current = ok.childNodes[1];
-    //if (elem.id != current.id) {
+    //if (element.id != current.id) {
     //    document.getElementById("messageText").innerHTML = "";
     //}   
 
@@ -224,20 +236,23 @@ function changerGroupe(elem) {
 
     }
 
-    //envoyerRequeteJoin(elem);
+    //envoyerRequeteJoin(element);
 
     //var container = document.getElementById("con22");
     //var current = container.childNodes[1];
     var nom = "hello";
     ////création du message
-   // let message = new Message("onGetChannel", elem.id, nom, nom, nom);
+   // let message = new Message("onGetChannel", element.id, nom, nom, nom);
     //socket.send(JSON.stringify(message));
 
 
 }
 
 
-function changerGroupeGeneral(elem) {
+/** Cette fonction est responssable d'afficher "General" sous l'onglet "Groupe actif"
+ @param {HTMLElement} element - l'icone généré
+ */
+function changerGroupeGeneral(element) {
 
     document.getElementById("con22").innerHTML = "";
 
@@ -245,19 +260,19 @@ function changerGroupeGeneral(elem) {
 
     var activeGroup = document.createElement("h4");
     activeGroup.innerHTML = "General";
-    activeGroup.id = elem.id;
+    activeGroup.id = element.id;
     var parent = document.getElementById("con22");
     parent.appendChild(activeGroup);
 
     document.getElementById("messageText").innerHTML = "";
 
 
-    //envoyerRequeteJoin(elem);
+    //envoyerRequeteJoin(element);
 
     //var container = document.getElementById("con22");
     //var current = container.childNodes[1];
     var nom = "hello";
     ////création du message
-    //let message = new Message("onGetChannel", elem.id, nom, nom, nom);
+    //let message = new Message("onGetChannel", element.id, nom, nom, nom);
     //socket.send(JSON.stringify(message));
 }
