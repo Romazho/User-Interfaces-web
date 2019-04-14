@@ -96,7 +96,9 @@
     float: left;
     background: red;
     color: black;
-    max-width: 40%;
+    max-width: 70%;
+    margin-right: 15%;
+    margin-left: 15%;
     margin-bottom: 3px;
     padding: 10px;
     overflow-wrap: break-word;
@@ -295,7 +297,7 @@
 .bar{
     display: grid;
     grid-template-columns: 40px auto 75px; /* 75% - 34% */
-    grid-template-rows: 70%;
+    
     position:relative;
     bottom: 0px;
 }
