@@ -115,7 +115,7 @@
 
 #logo {
     display: grid;
-    grid-template-columns: 92px 57px 94px;
+    grid-template-columns: 80px 30px 94px;
     grid-template-rows: auto;
     text-align: center;
     font-size: 40px;
@@ -124,8 +124,17 @@
 #poly {
     color : #ff671B;
 }
+
+.fa-users {
+    /*width: 20px;
+    height: 20px;*/
+    font-size: 25px;
+
+    padding-top: 25px
+}
+
 #chat {
-    color :#0295D3;
+    color: #0295D3;
 }
 #users {
     color: black;
@@ -140,7 +149,7 @@
     grid-template-rows: auto;
     /* border-spacing: 100px; */
     text-align: right;
-    font-size: 20px;
+    font-size: 27px;
 }
 
     .utilisateur{
@@ -149,6 +158,21 @@
         grid-template-rows: auto auto;
         text-align: center;
     }
+
+    #notif{
+        background: red;
+        border-radius: 50%;
+        color: white;
+        text-align: center;
+        font-size: 15px;
+        font-weight: bold;
+        margin-top: -34px;
+        margin-right: -29px;
+        margin-left: 10px;
+        width: 21px;
+        height: 17px;
+    }
+    
 
     .personne{
         color: black;
@@ -305,14 +329,14 @@
 .fa-plus {
     color:rgb(95,158,160);
     cursor: pointer;
-} 
+}
 
-.groupes{
+.groupes {
     display: grid;
     grid-template-columns: auto;
-    grid-template-rows: 40px 40px 40px 40px; /*4 rows max for now...*/
-    padding:20px;
-    padding-top:40px;
+    grid-auto-rows: 40px;
+    padding: 20px;
+    padding-top: 40px;
 }
 
 .grGeneral{

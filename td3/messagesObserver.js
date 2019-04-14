@@ -15,6 +15,9 @@ class MessagesObserver {
 
     ajouterMessage(message) {
 
+        compteurNotification++;
+        updateCompteur();
+
         var container = document.getElementById("con22");
         var current = container.childNodes[1];
 
@@ -118,7 +121,16 @@ class MessagesObserver {
 
     }
 
-    
+    afficherHistorique(data) {
+
+        for (var i = 0; i < data.messages.length; i++) {
+            this.ajouterMessage(data.messages[i]);
+        }
+
+    }
+
+
+
 }
 
 

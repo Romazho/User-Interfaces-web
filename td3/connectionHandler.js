@@ -28,6 +28,7 @@ class ConnectionHandler {
             var text = "";
             //msg est un objet
             var msg = JSON.parse(event.data);
+            console.log(msg);
             console.log(msg.data);
             
             var time = new Date(msg.timestamp);
@@ -52,6 +53,9 @@ class ConnectionHandler {
                 case "onError":
                     //messagesObserver.  Ajouter fct pour afficher un erreur
                     this.MessagesObserver.afficherErreur();         //fait
+                    break;
+                case "onGetChannel":
+                    this.MessagesObserver.afficherHistorique(msg.data);
                     break;
             }
         

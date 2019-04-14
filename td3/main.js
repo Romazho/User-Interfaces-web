@@ -37,6 +37,28 @@ function initialisation(){
 }
 
 
+var compteurNotification = 0; 
+
+function updateCompteur() {
+    var cloche = document.getElementById("cloche");
+
+    while (cloche.hasChildNodes()) {
+        cloche.removeChild(cloche.lastChild);
+    }
+
+    if (compteurNotification != 0) {
+        var rouge = document.createElement("div");
+        rouge.id = "notif";
+        rouge.innerHTML = compteurNotification;
+        document.getElementById("cloche").appendChild(rouge);
+    }
+}
+
+function resetCompteur() {
+    compteurNotification = 0; 
+    updateCompteur();
+}
+
 //fonction bonus
 function connecter(){
         var name = prompt("Entrez votre nom");
@@ -53,20 +75,22 @@ function envoyerMessage(){
     var data = document.getElementById("dataMessage").value;
     
     //recevoir le channelId dans le handler?
-    var channelId = "dbf646dc-5006-4d9f-8815-fd37514818ee";
+    //var channelId = "dbf646dc-5006-4d9f-8815-fd37514818ee";
+
+    var container = document.getElementById("con22");
+    var current = container.childNodes[1];
 
     var nom = document.getElementById("nom").innerHTML ;    //nom = TheMan
 
     //création du message
-    let message = new Message("onMessage",channelId,data,nom,nom);
+    let message = new Message("onMessage",current.id,data,nom,nom);
 
     //envoie du message
     socket.send(JSON.stringify(message)); 
 
 	//on efface ce qui a été écrit a la fin.
     document.getElementById("dataMessage").value = "";
-    
-
+   
 }
 
 function envoyerGroupe() {
@@ -118,7 +142,7 @@ input.addEventListener("keyup", function (event) {
 
 
 
-
+/*
 function displayMessage() {
     var message = document.createElement("div");
     message.id = "bubbleme";
@@ -126,40 +150,15 @@ function displayMessage() {
     document.getElementById("messageText").appendChild(message);
     document.getElementById("messageText").scrollBy(0,5000);
 }
+*/
 
-/*
-    // Get the modal
-    var modal = document.getElementById('myModal');
-
-    // Get the button that opens the modal
-    var btn = document.getElementById("myBtn");
-
-    // Get the <span> element that closes the modal
-    var span = document.getElementsByClassName("close")[0];
-
-    // When the user clicks the button, open the modal
-    btn.onclick = function () {
-        modal.style.display = "block";
-    }
-
-    // When the user clicks on <span> (x), close the modal
-    span.onclick = function () {
-        modal.style.display = "none";
-    }
-
-
-
-
-    //When the user clicks anywhere outside of the modal, close it
-    window.onclick = function (event) {
-        if (event.target == modal) {
-            modal.style.display = "none";
-        }
-    }
-    */
 
 function envoyerRequeteJoin(x) {
     //on prend ce qui a été écrit dans la bar
+
+    x.classList.add("fa-minus");
+
+    changerGroupe(x);    
 
     var id = x.id;
 
@@ -174,12 +173,14 @@ function envoyerRequeteJoin(x) {
 
 }
 
-function changeStatus(elem){
-    if (elem.classList.contains("fa-plus"))
-        envoyerRequeteJoin(elem);
-    else {
-        envoyerRequestLeave(elem);
-    }
+function changeStatus(elem) {
+
+        if (elem.classList.contains("fa-plus"))
+            envoyerRequeteJoin(elem);
+        else {
+            envoyerRequestLeave(elem);
+        }
+    
 }
 
 function envoyerRequestLeave(x) {
@@ -196,19 +197,49 @@ function envoyerRequestLeave(x) {
     //envoie du message
     socket.send(JSON.stringify(request));
 
+    changerGroupeGeneral(x);          
 }
 
 function changerGroupe(elem) {
 
-    document.getElementById("con22").innerHTML = "";
+    var parent = elem.parentElement;
+    var icone = parent.firstChild;
+    var channel = parent.childNodes[1];
 
-    document.getElementById("con22").innerHTML += "<div>Groupe actif:</div>";
+    //var ok = document.getElementById("con22");
+    //var current = ok.childNodes[1];
+    //if (elem.id != current.id) {
+    //    document.getElementById("messageText").innerHTML = "";
+    //}   
 
-    var activeGroup = document.createElement("h4");
-    activeGroup.innerHTML = elem.innerHTML;
-    activeGroup.id = elem.id;
-    var parent = document.getElementById("con22");
-    parent.appendChild(activeGroup);
+
+
+    if (icone.classList.contains("fa-minus")) {
+
+        //on change juste le texte
+        document.getElementById("con22").innerHTML = "";
+
+        document.getElementById("con22").innerHTML += "<div>Groupe actif:</div>";
+
+        var activeGroup = document.createElement("h4");
+        activeGroup.innerHTML = channel.innerHTML;
+        activeGroup.id = channel.id;
+        var parent = document.getElementById("con22");
+        parent.appendChild(activeGroup);
+
+
+    }
+
+    //envoyerRequeteJoin(elem);
+
+    //var container = document.getElementById("con22");
+    //var current = container.childNodes[1];
+    var nom = "hello";
+    ////création du message
+   // let message = new Message("onGetChannel", elem.id, nom, nom, nom);
+    //socket.send(JSON.stringify(message));
+
+
 }
 
 
@@ -223,4 +254,16 @@ function changerGroupeGeneral(elem) {
     activeGroup.id = elem.id;
     var parent = document.getElementById("con22");
     parent.appendChild(activeGroup);
+
+    document.getElementById("messageText").innerHTML = "";
+
+
+    //envoyerRequeteJoin(elem);
+
+    //var container = document.getElementById("con22");
+    //var current = container.childNodes[1];
+    var nom = "hello";
+    ////création du message
+    //let message = new Message("onGetChannel", elem.id, nom, nom, nom);
+    //socket.send(JSON.stringify(message));
 }

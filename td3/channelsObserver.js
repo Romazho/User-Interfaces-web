@@ -12,13 +12,10 @@ class ChannelsObserver {
     
     updateChannelList(channels){
 
-
+       
         //1. on efface tout ce qu'il ya dans id=groupe
         var groupeList = document.getElementById("groupe").innerHTML = "";
-
-        //while (groupeList.firstChild) {
-        //    groupeList.remove(groupeList.firstChild);
-        //}
+        document.getElementById("messageText").innerHTML = "";
 
         //2. on ajoute tout les groupes dans id=groupe
 
@@ -43,6 +40,14 @@ class ChannelsObserver {
             this.ajouterGroupe(channels.data[i]);
         }
 
+        var container = document.getElementById("con22");
+        var current = container.childNodes[1];
+
+         var nom = "hello";
+
+        //création du message
+        let message = new Message("onGetChannel", current.id, nom, nom, nom);
+        socket.send(JSON.stringify(message));
        
     }
     
@@ -58,9 +63,11 @@ class ChannelsObserver {
 
         if (channel.joinStatus == false) {
             i.classList.add("fa-plus");
+            
         }
         else {
             i.classList.add("fa-minus");
+  
         }
         i.id = channel.id;     
         groupName.id = channel.id;
@@ -86,6 +93,7 @@ class ChannelsObserver {
 
         document.getElementById("groupe").appendChild(groupeBox);
 
+        changerGroupe(groupName);      
     }
 
 
