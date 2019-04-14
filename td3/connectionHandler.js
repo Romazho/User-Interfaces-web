@@ -2,6 +2,10 @@
 
 class ConnectionHandler {
 
+
+    /** Cette fonction est responssable de construir l'objet connectionHandler
+     @param {WebSocket} socket - le web socket associé au ConnectionHandler
+     */
     constructor(socket){
         this.MessagesObserver  = undefined;
         this.ChannelsObserver  = undefined;
@@ -9,16 +13,25 @@ class ConnectionHandler {
     }
 
     
-
+ 
+ 
+    /** Cette fonction est responssable d'ajouter un observateur de message à l'objet connectionHandler
+     @param {MessageObserver} messageObserver - l'observateur de message
+     */
     subscribeMessageEvent(messageObserver){
         this.MessagesObserver = messageObserver;
         
     }
 
+
+    /** Cette fonction est responssable d'ajouter un observateur de channel à l'objet connectionHandler
+     @param {ChannelObserver} channelObserver - l'observateur de channel
+     */
     subscribeChannelEvent(channelsObserver){
         this.ChannelsObserver = channelsObserver;
     }
-
+    /** Cette fonction est responssable d'initialiser l'ensemble des responsabilités liées au connectionHandler selon l'évènement 
+     */
     init(){
 
         this.socket.onmessage = (event) =>{
