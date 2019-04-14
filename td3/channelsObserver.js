@@ -30,7 +30,7 @@ class ChannelsObserver {
 
         //var defaut = document.createElement("div");
         //defaut.className = "defaut";
-        //defaut.innerHTML = "défaut";
+        //defaut.innerHTML = "dï¿½faut";
         general.setAttribute("onclick", "changerGroupeGeneral(this)");
 
         general.innerHTML += "<div class='fas fa-star'> </div>  General <div class='defaut'> defaut </div>";
@@ -45,7 +45,7 @@ class ChannelsObserver {
 
          var nom = "hello";
 
-        //création du message
+        //crï¿½ation du message
         let message = new Message("onGetChannel", current.id, nom, nom, nom);
         socket.send(JSON.stringify(message));
        
@@ -116,19 +116,7 @@ changePlusMinus(bool) {
 }
 
 
-    ajouterUtilisateur(name) {
-
-
-    }
-
-
-
-
-    retirerUtilisateur(name) {
-
-
-
-    }
+   
 
 
 }
