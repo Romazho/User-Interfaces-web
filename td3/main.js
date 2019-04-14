@@ -156,7 +156,7 @@ function envoyerRequeteJoin(element) {
 
     element.classList.add("fa-minus");
 
-    changerGroupe(x);    
+    changerGroupe(element);    
 
     var id = element.id;
 
@@ -237,7 +237,7 @@ function changerGroupe(element) {
     }
 
     //envoyerRequeteJoin(element);
-
+    
     //var container = document.getElementById("con22");
     //var current = container.childNodes[1];
     var nom = "hello";
