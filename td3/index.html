@@ -61,15 +61,15 @@
                             </div>
                         </a>
 
-                        <a href="#" style="color:black">
+                        <a href="#">
                             <div class="far fa-bell" id="cloche"></div>
                         </a>
                         
-                        <a href="#" style="color:black">
+                        <a href="#">
                             <div class="fas fa-globe"></div>
                         </a>
 
-                        <a href="#" style="color:black">
+                        <a href="#">
                             <span class="glyphicon cog1" aria-hidden="true"></span>
                         </a>
                     
@@ -92,13 +92,13 @@
                     <!-- second row -->
                     <div class="con231">
                         <div> <h4>Groupe disponibles </h4></div>
-                        <div style="word-spacing:7px;" align="right">
+                        <div id="disponible">
                             <h4>
 
                                 <!-- les icones -->         
                                    <span class="glyphicon plus1" id="myBtn" onclick="envoyerGroupe()" ></span>
 
-                                <a href="#" class="cog" style="color:white">
+                                <a href="#" class="cog">
                                     <span class="glyphicon cog2" aria-hidden="true"></span>
                                 </a>
                             </h4>
@@ -112,18 +112,6 @@
                 <!-- place pour les messages -->
                 <div class="message">
                     <div id="messageText">
-  
-                        
-                        <!-- modal -->
-                        <div id="myModal" class="modal">
-                            <div class="modal-content">
-                                <span class="close" onclick="close()">&times;</span>
-                                <h3>Choisissez le nom du groupe</h3>
-                                <input id="NomGroupe" placeholder="Le nom du groupe ici!" value="test">
-                                <button class="ajout" onclick="envoyerGroupe()"> Ajouter </button>
-                            </div>
-                        </div>
-
 
                     </div>
                     <!-- la place pour l'ecriture -->
@@ -132,8 +120,6 @@
                             <div class="far fa-thumbs-up" onclick="envoyerMessagePouce()"></div>
                         </button>
 
-                        <!-- et est-ce que c'est correct comme ca ou "envoyer" n'est pas un button
-                            et il faut faire 3 grides pour la derniere ligne?-->
                         <input autofocus="autofocus" id="dataMessage" class="EcritureMessage" placeholder="Votre message ici!">
                         <button id="envoyerEnter" class="envoyer" onclick="envoyerMessage()">
                             Envoyer
@@ -148,20 +134,6 @@
                         <div class="fas fa-star"> </div>  Général
                         <div class="defaut"> défaut </div>
                     </div>
-                    <!--<div class="equipe1">
-
-                        <i id="eq" onclick="changeStatus(this)" class="fas fa-plus"></i>
-
-                        équipe 1
-                    </div>-->
-                    <!-- <div class="grGeneral">
-
-        <i id="eq" onclick="changePlusMinus(this)" class="fas fa-plus" ></i>
-
-        équipe 2
-    </div>
-
-    <!-- <i class="fas fa-plus"></i> -->
                 </div>
             </div>
 

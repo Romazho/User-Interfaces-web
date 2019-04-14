@@ -26,14 +26,6 @@ class ChannelsObserver {
         general.className = "grGeneral";
 
         document.getElementById("groupe").appendChild(general);
-
-        //var star = document.createElement("div");
-        //star.className = "fas fa-star";
-        //star.innerHTML = "";
-
-        //var defaut = document.createElement("div");
-        //defaut.className = "defaut";
-        //defaut.innerHTML = "d�faut";
         general.setAttribute("onclick", "changerGroupeGeneral(this)");
 
         general.innerHTML += "<div class='fas fa-star'> </div>  General <div class='defaut'> defaut </div>";
@@ -80,7 +72,6 @@ class ChannelsObserver {
 
         groupName.setAttribute("onclick", "changerGroupe(this)");
         i.setAttribute("onclick", "changeStatus(this)");
-        //est-ce qu'on peut faire .class??
        
         if(this.iteration % 2 == 0 ){
             groupeBox.className = "equipe1";

@@ -19,7 +19,7 @@ function initialisation(){
     let messageObserver = new MessagesObserver();
     let channelObserver = new ChannelsObserver();
 
-    // 3. Subscribe, .. 
+    // 3. Subscribe
     connectionHandler.subscribeMessageEvent(messageObserver);
     connectionHandler.subscribeChannelEvent(channelObserver);
 
@@ -194,7 +194,6 @@ function envoyerRequestLeave(element) {
     var data = element.innerHTML;
 
     //création du message
-
     let request = new Message("onLeaveChannel", id, data, data, data);
 
     //envoie du message
@@ -212,14 +211,6 @@ function changerGroupe(element) {
     var icone = parent.firstChild;
     var channel = parent.childNodes[1];
 
-    //var ok = document.getElementById("con22");
-    //var current = ok.childNodes[1];
-    //if (element.id != current.id) {
-    //    document.getElementById("messageText").innerHTML = "";
-    //}   
-
-
-
     if (icone.classList.contains("fa-minus")) {
 
         //on change juste le texte
@@ -235,16 +226,6 @@ function changerGroupe(element) {
 
 
     }
-
-    //envoyerRequeteJoin(element);
-    
-    //var container = document.getElementById("con22");
-    //var current = container.childNodes[1];
-    var nom = "hello";
-    ////création du message
-   // let message = new Message("onGetChannel", element.id, nom, nom, nom);
-    //socket.send(JSON.stringify(message));
-
 
 }
 
@@ -265,14 +246,4 @@ function changerGroupeGeneral(element) {
     parent.appendChild(activeGroup);
 
     document.getElementById("messageText").innerHTML = "";
-
-
-    //envoyerRequeteJoin(element);
-
-    //var container = document.getElementById("con22");
-    //var current = container.childNodes[1];
-    var nom = "hello";
-    ////création du message
-    //let message = new Message("onGetChannel", element.id, nom, nom, nom);
-    //socket.send(JSON.stringify(message));
 }
